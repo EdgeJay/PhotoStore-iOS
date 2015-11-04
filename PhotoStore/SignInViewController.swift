@@ -8,13 +8,21 @@
 
 import UIKit
 import Parse
+import JVFloatLabeledTextField
 
 class SignInViewController: UIViewController {
+    
+    var txtEmail: JVFloatLabeledTextField?
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        
+        txtEmail = JVFloatLabeledTextField(frame: CGRectMake(10, 40, self.view.bounds.width - 20, 40))
+        txtEmail?.clearButtonMode = .WhileEditing
+        txtEmail?.placeholder = "Email Address"
+        self.view.addSubview(txtEmail!)
         
         /*
         let user = PFUser()
