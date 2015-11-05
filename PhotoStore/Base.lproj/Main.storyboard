@@ -21,6 +21,25 @@
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="1sg-dh-NBE">
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bL4-vw-Gzu" customClass="HoshiTextField" customModule="TextFieldEffects">
+                                        <rect key="frame" x="28" y="216" width="544" height="66"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="66" id="hwH-fQ-lPM"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="alphabet" returnKeyType="go"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                                <color key="value" red="0.66902792450000004" green="0.73128575090000003" blue="0.9488992691" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                                <color key="value" red="0.19376453760000001" green="0.50850099329999998" blue="0.85232251879999998" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                <color key="value" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pmW-jh-4DG" customClass="HoshiTextField" customModule="TextFieldEffects">
                                         <rect key="frame" x="28" y="216" width="544" height="66"/>
                                         <constraints>
@@ -100,25 +119,6 @@
                                             <action selector="onRevealPassword:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eBz-fi-9jW"/>
                                         </connections>
                                     </button>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bL4-vw-Gzu" customClass="HoshiTextField" customModule="TextFieldEffects">
-                                        <rect key="frame" x="28" y="216" width="544" height="66"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="66" id="hwH-fQ-lPM"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="go"/>
-                                        <userDefinedRuntimeAttributes>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
-                                                <color key="value" red="0.66902792450000004" green="0.73128575090000003" blue="0.9488992691" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
-                                                <color key="value" red="0.19376453760000001" green="0.50850099329999998" blue="0.85232251879999998" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
-                                                <color key="value" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
-                                            </userDefinedRuntimeAttribute>
-                                        </userDefinedRuntimeAttributes>
-                                    </textField>
                                 </subviews>
                                 <constraints>
                                     <constraint firstItem="Len-WJ-9dL" firstAttribute="top" secondItem="pmW-jh-4DG" secondAttribute="bottom" constant="70" id="4af-4K-Nsu"/>
@@ -153,6 +153,7 @@
                     <connections>
                         <outlet property="btnForgotPassword" destination="ebT-ku-eMY" id="6Yb-8n-lvc"/>
                         <outlet property="btnRevealPassword" destination="rCX-PA-SyB" id="Ekc-qf-W1M"/>
+                        <outlet property="btnSignIn" destination="Len-WJ-9dL" id="5ka-fc-ssD"/>
                         <outlet property="txtEmail" destination="VMm-hY-c0E" id="eV2-6v-hlo"/>
                         <outlet property="txtPassword" destination="pmW-jh-4DG" id="Rpa-8f-cVA"/>
                         <outlet property="txtVisiblePassword" destination="bL4-vw-Gzu" id="oZc-yI-njq"/>

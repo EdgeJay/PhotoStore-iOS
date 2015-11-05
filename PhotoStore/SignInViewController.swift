@@ -19,6 +19,7 @@ class SignInViewController: UIViewController {
     @IBOutlet weak var txtEmail: HoshiTextField!
     @IBOutlet weak var txtPassword: HoshiTextField! // original password field
     @IBOutlet weak var txtVisiblePassword: HoshiTextField! // visible password
+    @IBOutlet weak var btnSignIn: MDButton!
     var passwordRevealed = false
     
     override func viewDidLoad() {
@@ -32,6 +33,11 @@ class SignInViewController: UIViewController {
         btnRevealPassword.setAttributedTitle(FAKFontAwesome.eyeIconWithSize(15.0).attributedString(), forState: .Normal)
         
         txtVisiblePassword.hidden = true
+        txtEmail.addTarget(self, action: Selector("onTextChanged:"), forControlEvents: .EditingChanged)
+        txtPassword.addTarget(self, action: Selector("onTextChanged:"), forControlEvents: .EditingChanged)
+        txtVisiblePassword.addTarget(self, action: Selector("onTextChanged:"), forControlEvents: .EditingChanged)
+        
+        btnSignIn.enabled = false
         
         /*
         let user = PFUser()
@@ -81,11 +87,29 @@ class SignInViewController: UIViewController {
     }
     */
     
+    // MARK: - UI actions
+    func onTextChanged(sender: AnyObject) {
+        
+        btnSignIn.enabled = false
+        
+        guard let _ = txtEmail.text, _ = (passwordRevealed ? txtVisiblePassword.text: txtPassword.text) else {
+            return
+        }
+        
+        if NSString(string: txtEmail.text!).stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()).characters.count > 0 &&
+            ((!passwordRevealed && NSString(string: txtPassword.text!).stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()).characters.count > 0) ||
+            (passwordRevealed && NSString(string: txtVisiblePassword.text!).stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()).characters.count > 0)) {
+                
+            btnSignIn.enabled = true
+        }
+    }
+    
     @IBAction func onRevealPassword(sender: AnyObject) {
         if passwordRevealed {
             btnRevealPassword.alpha = 0.3
             txtPassword.hidden = false
             txtPassword.text = txtVisiblePassword.text
+            txtPassword.becomeFirstResponder()
             txtVisiblePassword.hidden = true
         }
         else {
@@ -93,6 +117,7 @@ class SignInViewController: UIViewController {
             txtPassword.hidden = true
             txtVisiblePassword.text = txtPassword.text
             txtVisiblePassword.hidden = false
+            txtVisiblePassword.becomeFirstResponder()
         }
         
         passwordRevealed = !passwordRevealed
