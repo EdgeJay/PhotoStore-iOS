@@ -5,6 +5,9 @@ PODS:
   - Bolts/AppLinks (1.4.0):
     - Bolts/Tasks
   - Bolts/Tasks (1.4.0)
+  - ChameleonFramework (2.0.4):
+    - ChameleonFramework/Default (= 2.0.4)
+  - ChameleonFramework/Default (2.0.4)
   - FBSDKCoreKit (4.7.1):
     - Bolts (~> 1.1)
     - FBSDKCoreKit/arc (= 4.7.1)
@@ -18,7 +21,7 @@ PODS:
     - FBSDKCoreKit
   - FBSDKShareKit (4.7.1):
     - FBSDKCoreKit
-  - JVFloatLabeledTextField (1.1.0)
+  - MBProgressHUD (0.9.1)
   - Parse (1.9.1):
     - Bolts/Tasks (>= 1.4.0)
   - ParseFacebookUtilsV4 (1.9.0):
@@ -26,22 +29,30 @@ PODS:
     - FBSDKCoreKit (~> 4.7)
     - FBSDKLoginKit (~> 4.7)
     - Parse (~> 1.9)
+  - PermissionScope (1.0.1)
+  - TextFieldEffects (0.4.7)
 
 DEPENDENCIES:
+  - ChameleonFramework
   - FBSDKCoreKit
   - FBSDKLoginKit
   - FBSDKShareKit
-  - JVFloatLabeledTextField
+  - MBProgressHUD
   - Parse
   - ParseFacebookUtilsV4
+  - PermissionScope
+  - TextFieldEffects
 
 SPEC CHECKSUMS:
   Bolts: 0e9bce58b9b9f5e8a7a4d47b16d2fabec289072b
+  ChameleonFramework: 5abe69b1f2a6cc79c3c435fcd9d3d855748225ee
   FBSDKCoreKit: 9141b70960a37930850370495fe565f4a27ac141
   FBSDKLoginKit: c11ed3c2833472db3bb4a4aecf27af4a6f69b173
   FBSDKShareKit: 213adf63e073f41a346b0e7a689805880dc5150e
-  JVFloatLabeledTextField: ea4a3d8387ddd43724c472bb2b8ab39b79af05d4
+  MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
   Parse: 54a965c8c19a6dde90284ab654dbcc77ef8c001b
   ParseFacebookUtilsV4: aadebfaaaf4a45bf0a0992863bf48c8fc49189e3
+  PermissionScope: 9767066cedefd211d90a8c4f92f6f1a987085ee8
+  TextFieldEffects: 42af0369774020391382e593a7b12fdfe4e9e20f
 
 COCOAPODS: 0.39.0
