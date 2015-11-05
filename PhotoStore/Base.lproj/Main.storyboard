@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Sign In View Controller-->
@@ -16,11 +17,74 @@
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" keyboardDismissMode="onDrag" translatesAutoresizingMaskIntoConstraints="NO" id="1sg-dh-NBE">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="pmW-jh-4DG" customClass="HoshiTextField" customModule="TextFieldEffects">
+                                        <rect key="frame" x="28" y="216" width="544" height="66"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="66" id="10b-Hn-Yeu"/>
+                                            <constraint firstAttribute="height" constant="66" id="2rD-Vj-ZGd"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                                <color key="value" cocoaTouchSystemColor="darkTextColor"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                                <color key="value" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                <color key="value" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Email Address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="VMm-hY-c0E" customClass="HoshiTextField" customModule="TextFieldEffects">
+                                        <rect key="frame" x="28" y="140" width="544" height="66"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="66" id="1b1-k3-lcI"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                                <color key="value" cocoaTouchSystemColor="darkTextColor"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                                <color key="value" red="0.0" green="0.50196081399917603" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                <color key="value" red="0.50196081399917603" green="0.50196081399917603" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="VMm-hY-c0E" firstAttribute="leading" secondItem="1sg-dh-NBE" secondAttribute="leading" constant="28" id="5NX-v8-7IU"/>
+                                    <constraint firstItem="VMm-hY-c0E" firstAttribute="trailing" secondItem="pmW-jh-4DG" secondAttribute="trailing" id="D8M-fs-3HI"/>
+                                    <constraint firstItem="VMm-hY-c0E" firstAttribute="centerX" secondItem="1sg-dh-NBE" secondAttribute="centerX" id="Uvu-Sm-p3f"/>
+                                    <constraint firstAttribute="bottom" secondItem="pmW-jh-4DG" secondAttribute="bottom" constant="314" id="aIE-7e-2LK"/>
+                                    <constraint firstItem="VMm-hY-c0E" firstAttribute="top" secondItem="1sg-dh-NBE" secondAttribute="top" constant="140" id="gFY-5i-Fzp"/>
+                                    <constraint firstAttribute="trailing" secondItem="VMm-hY-c0E" secondAttribute="trailing" constant="28" id="sC4-AK-iev"/>
+                                    <constraint firstItem="pmW-jh-4DG" firstAttribute="top" secondItem="VMm-hY-c0E" secondAttribute="bottom" constant="10" id="yBb-XV-OPV"/>
+                                    <constraint firstItem="VMm-hY-c0E" firstAttribute="leading" secondItem="pmW-jh-4DG" secondAttribute="leading" id="yv5-Do-lbX"/>
+                                </constraints>
+                            </scrollView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="1sg-dh-NBE" secondAttribute="bottom" id="1PF-2z-XBm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="1sg-dh-NBE" secondAttribute="trailing" constant="-20" id="3La-AX-CSR"/>
+                            <constraint firstItem="1sg-dh-NBE" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="-20" id="7fn-lu-OYf"/>
+                            <constraint firstItem="1sg-dh-NBE" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="aGl-gB-THB"/>
+                        </constraints>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="565" y="479"/>
         </scene>
     </scenes>
 </document>

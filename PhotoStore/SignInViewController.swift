@@ -8,7 +8,8 @@
 
 import UIKit
 import Parse
-import JVFloatLabeledTextField
+import TextFieldEffects
+import FontAwesomeKit
 
 class SignInViewController: UIViewController {
     
@@ -16,6 +17,8 @@ class SignInViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        let starIcon = FAKFontAwesome.starIconWithSize(15.0)
+        print(starIcon.attributedString())
         
         /*
         let user = PFUser()

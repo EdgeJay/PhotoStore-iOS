@@ -21,6 +21,10 @@ PODS:
     - FBSDKCoreKit
   - FBSDKShareKit (4.7.1):
     - FBSDKCoreKit
+  - FontAwesomeKit/Core (2.2.0)
+  - FontAwesomeKit/FontAwesome (2.2.0):
+    - FontAwesomeKit/Core
+  - MaterialControls (1.0.2)
   - MBProgressHUD (0.9.1)
   - Parse (1.9.1):
     - Bolts/Tasks (>= 1.4.0)
@@ -37,6 +41,8 @@ DEPENDENCIES:
   - FBSDKCoreKit
   - FBSDKLoginKit
   - FBSDKShareKit
+  - FontAwesomeKit/FontAwesome
+  - MaterialControls
   - MBProgressHUD
   - Parse
   - ParseFacebookUtilsV4
@@ -49,6 +55,8 @@ SPEC CHECKSUMS:
   FBSDKCoreKit: 9141b70960a37930850370495fe565f4a27ac141
   FBSDKLoginKit: c11ed3c2833472db3bb4a4aecf27af4a6f69b173
   FBSDKShareKit: 213adf63e073f41a346b0e7a689805880dc5150e
+  FontAwesomeKit: 025fd4dd1017fe4e3f8d47b03e024deedbb33cd4
+  MaterialControls: bdeeb94aa049b73f70739a5514be137d2d45c08a
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
   Parse: 54a965c8c19a6dde90284ab654dbcc77ef8c001b
   ParseFacebookUtilsV4: aadebfaaaf4a45bf0a0992863bf48c8fc49189e3
