@@ -5,9 +5,9 @@ PODS:
   - Bolts/AppLinks (1.4.0):
     - Bolts/Tasks
   - Bolts/Tasks (1.4.0)
-  - ChameleonFramework (2.0.4):
-    - ChameleonFramework/Default (= 2.0.4)
   - ChameleonFramework/Default (2.0.4)
+  - ChameleonFramework/Swift (2.0.4):
+    - ChameleonFramework/Default
   - FBSDKCoreKit (4.7.1):
     - Bolts (~> 1.1)
     - FBSDKCoreKit/arc (= 4.7.1)
@@ -37,7 +37,7 @@ PODS:
   - TextFieldEffects (0.4.7)
 
 DEPENDENCIES:
-  - ChameleonFramework
+  - ChameleonFramework/Swift
   - FBSDKCoreKit
   - FBSDKLoginKit
   - FBSDKShareKit

@@ -10,15 +10,28 @@ import UIKit
 import Parse
 import TextFieldEffects
 import FontAwesomeKit
+import MaterialControls
 
 class SignInViewController: UIViewController {
+    
+    @IBOutlet weak var btnForgotPassword: MDButton!
+    @IBOutlet weak var btnRevealPassword: UIButton!
+    @IBOutlet weak var txtEmail: HoshiTextField!
+    @IBOutlet weak var txtPassword: HoshiTextField! // original password field
+    @IBOutlet weak var txtVisiblePassword: HoshiTextField! // visible password
+    var passwordRevealed = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        let starIcon = FAKFontAwesome.starIconWithSize(15.0)
-        print(starIcon.attributedString())
+        btnForgotPassword.backgroundColor = UIColor.clearColor()
+        
+        btnRevealPassword.backgroundColor = UIColor.clearColor()
+        btnRevealPassword.alpha = 0.3
+        btnRevealPassword.setAttributedTitle(FAKFontAwesome.eyeIconWithSize(15.0).attributedString(), forState: .Normal)
+        
+        txtVisiblePassword.hidden = true
         
         /*
         let user = PFUser()
@@ -67,4 +80,21 @@ class SignInViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    @IBAction func onRevealPassword(sender: AnyObject) {
+        if passwordRevealed {
+            btnRevealPassword.alpha = 0.3
+            txtPassword.hidden = false
+            txtPassword.text = txtVisiblePassword.text
+            txtVisiblePassword.hidden = true
+        }
+        else {
+            btnRevealPassword.alpha = 1.0
+            txtPassword.hidden = true
+            txtVisiblePassword.text = txtPassword.text
+            txtVisiblePassword.hidden = false
+        }
+        
+        passwordRevealed = !passwordRevealed
+    }
 }

@@ -25,16 +25,15 @@
                                         <rect key="frame" x="28" y="216" width="544" height="66"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="66" id="10b-Hn-Yeu"/>
-                                            <constraint firstAttribute="height" constant="66" id="2rD-Vj-ZGd"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="go" secureTextEntry="YES"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
-                                                <color key="value" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="value" red="0.66902792450000004" green="0.73128575090000003" blue="0.9488992691" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
-                                                <color key="value" red="0.0" green="0.50196081400000003" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="value" red="0.19376453757286072" green="0.50850099325180054" blue="0.85232251882553101" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
                                                 <color key="value" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
@@ -47,26 +46,96 @@
                                             <constraint firstAttribute="height" constant="66" id="1b1-k3-lcI"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="17"/>
-                                        <textInputTraits key="textInputTraits"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" returnKeyType="next"/>
                                         <userDefinedRuntimeAttributes>
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
-                                                <color key="value" cocoaTouchSystemColor="darkTextColor"/>
+                                                <color key="value" red="0.66902792453765869" green="0.73128575086593628" blue="0.94889926910400391" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
-                                                <color key="value" red="0.0" green="0.50196081399917603" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                                                <color key="value" red="0.19376453757286072" green="0.50850099325180054" blue="0.85232251882553101" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                             <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
                                                 <color key="value" red="0.50196081399917603" green="0.50196081399917603" blue="0.50196081399917603" alpha="1" colorSpace="calibratedRGB"/>
                                             </userDefinedRuntimeAttribute>
                                         </userDefinedRuntimeAttributes>
                                     </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Len-WJ-9dL" customClass="MDButton">
+                                        <rect key="frame" x="250" y="352" width="100" height="40"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Uu1-GZ-meN"/>
+                                            <constraint firstAttribute="width" constant="100" id="rpO-U7-si4"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="18"/>
+                                        <state key="normal" title="Sign In">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ebT-ku-eMY" customClass="MDButton">
+                                        <rect key="frame" x="470" y="290" width="102" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="30" id="DWm-1a-z6j"/>
+                                            <constraint firstAttribute="width" constant="102" id="o2i-C2-xSQ"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="GillSans-Light" family="Gill Sans" pointSize="13"/>
+                                        <state key="normal" title="Forgot Password?">
+                                            <color key="titleColor" red="0.19376453757286072" green="0.50850099325180054" blue="0.85232251882553101" alpha="1" colorSpace="calibratedRGB"/>
+                                        </state>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="type">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rCX-PA-SyB" customClass="MDButton">
+                                        <rect key="frame" x="536" y="249" width="36" height="30"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="36" id="58N-Ye-Iop"/>
+                                        </constraints>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="number" keyPath="type">
+                                                <integer key="value" value="1"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                        <connections>
+                                            <action selector="onRevealPassword:" destination="BYZ-38-t0r" eventType="touchUpInside" id="eBz-fi-9jW"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bL4-vw-Gzu" customClass="HoshiTextField" customModule="TextFieldEffects">
+                                        <rect key="frame" x="28" y="216" width="544" height="66"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="66" id="hwH-fQ-lPM"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="GillSans-SemiBold" family="Gill Sans" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" returnKeyType="go"/>
+                                        <userDefinedRuntimeAttributes>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderInactiveColor">
+                                                <color key="value" red="0.66902792450000004" green="0.73128575090000003" blue="0.9488992691" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="borderActiveColor">
+                                                <color key="value" red="0.19376453760000001" green="0.50850099329999998" blue="0.85232251879999998" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                            <userDefinedRuntimeAttribute type="color" keyPath="placeholderColor">
+                                                <color key="value" red="0.50196081400000003" green="0.50196081400000003" blue="0.50196081400000003" alpha="1" colorSpace="calibratedRGB"/>
+                                            </userDefinedRuntimeAttribute>
+                                        </userDefinedRuntimeAttributes>
+                                    </textField>
                                 </subviews>
                                 <constraints>
+                                    <constraint firstItem="Len-WJ-9dL" firstAttribute="top" secondItem="pmW-jh-4DG" secondAttribute="bottom" constant="70" id="4af-4K-Nsu"/>
                                     <constraint firstItem="VMm-hY-c0E" firstAttribute="leading" secondItem="1sg-dh-NBE" secondAttribute="leading" constant="28" id="5NX-v8-7IU"/>
+                                    <constraint firstItem="ebT-ku-eMY" firstAttribute="top" secondItem="rCX-PA-SyB" secondAttribute="bottom" constant="11" id="5dk-Mj-GJ1"/>
                                     <constraint firstItem="VMm-hY-c0E" firstAttribute="trailing" secondItem="pmW-jh-4DG" secondAttribute="trailing" id="D8M-fs-3HI"/>
+                                    <constraint firstItem="bL4-vw-Gzu" firstAttribute="top" secondItem="VMm-hY-c0E" secondAttribute="bottom" constant="10" id="DnI-dX-QEf"/>
+                                    <constraint firstAttribute="trailingMargin" secondItem="bL4-vw-Gzu" secondAttribute="trailing" constant="20" id="Hoq-gM-gcd"/>
+                                    <constraint firstItem="rCX-PA-SyB" firstAttribute="trailing" secondItem="pmW-jh-4DG" secondAttribute="trailing" id="Mtr-kL-cHi"/>
                                     <constraint firstItem="VMm-hY-c0E" firstAttribute="centerX" secondItem="1sg-dh-NBE" secondAttribute="centerX" id="Uvu-Sm-p3f"/>
+                                    <constraint firstItem="ebT-ku-eMY" firstAttribute="top" secondItem="pmW-jh-4DG" secondAttribute="bottom" constant="8" symbolic="YES" id="VLK-gi-DQh"/>
                                     <constraint firstAttribute="bottom" secondItem="pmW-jh-4DG" secondAttribute="bottom" constant="314" id="aIE-7e-2LK"/>
                                     <constraint firstItem="VMm-hY-c0E" firstAttribute="top" secondItem="1sg-dh-NBE" secondAttribute="top" constant="140" id="gFY-5i-Fzp"/>
+                                    <constraint firstItem="ebT-ku-eMY" firstAttribute="trailing" secondItem="pmW-jh-4DG" secondAttribute="trailing" id="l6f-M0-9MJ"/>
+                                    <constraint firstItem="Len-WJ-9dL" firstAttribute="centerX" secondItem="1sg-dh-NBE" secondAttribute="centerX" id="lTf-uU-nd3"/>
+                                    <constraint firstItem="rCX-PA-SyB" firstAttribute="top" secondItem="VMm-hY-c0E" secondAttribute="bottom" constant="43" id="oSw-6T-FfA"/>
+                                    <constraint firstItem="bL4-vw-Gzu" firstAttribute="leading" secondItem="1sg-dh-NBE" secondAttribute="leadingMargin" constant="20" id="qWm-1d-ezL"/>
                                     <constraint firstAttribute="trailing" secondItem="VMm-hY-c0E" secondAttribute="trailing" constant="28" id="sC4-AK-iev"/>
                                     <constraint firstItem="pmW-jh-4DG" firstAttribute="top" secondItem="VMm-hY-c0E" secondAttribute="bottom" constant="10" id="yBb-XV-OPV"/>
                                     <constraint firstItem="VMm-hY-c0E" firstAttribute="leading" secondItem="pmW-jh-4DG" secondAttribute="leading" id="yv5-Do-lbX"/>
@@ -81,10 +150,17 @@
                             <constraint firstItem="1sg-dh-NBE" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="topMargin" id="aGl-gB-THB"/>
                         </constraints>
                     </view>
+                    <connections>
+                        <outlet property="btnForgotPassword" destination="ebT-ku-eMY" id="6Yb-8n-lvc"/>
+                        <outlet property="btnRevealPassword" destination="rCX-PA-SyB" id="Ekc-qf-W1M"/>
+                        <outlet property="txtEmail" destination="VMm-hY-c0E" id="eV2-6v-hlo"/>
+                        <outlet property="txtPassword" destination="pmW-jh-4DG" id="Rpa-8f-cVA"/>
+                        <outlet property="txtVisiblePassword" destination="bL4-vw-Gzu" id="oZc-yI-njq"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="565" y="479"/>
+            <point key="canvasLocation" x="362" y="397"/>
         </scene>
     </scenes>
 </document>

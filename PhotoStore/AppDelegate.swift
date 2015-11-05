@@ -9,6 +9,7 @@
 import UIKit
 import FBSDKCoreKit
 import ParseFacebookUtilsV4
+import ChameleonFramework
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,10 +18,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        
+        // setup app theme
+        ThemeManager.setupAppTheme()
+        
         // Register with Parse.com
         Parse.setApplicationId("iI93PDWQH3BTUbaYYprMTHxmqaEsi9V4sb1ej77t", clientKey: "k565PRFVCnzfNkO2koVv2dZ1VO1NQnkDFpbUuEPp")
+        
         // Track app open event
         PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
+        
         return true
     }
 

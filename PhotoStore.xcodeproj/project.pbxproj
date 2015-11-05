@@ -14,6 +14,7 @@
 		324A65C71BE9F0D90002E30C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 324A65C51BE9F0D90002E30C /* LaunchScreen.storyboard */; };
 		324A65CF1BE9F6940002E30C /* SignInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324A65CE1BE9F6940002E30C /* SignInViewController.swift */; };
 		32524FB71BEB05090023FF33 /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = 32524FB61BEB05090023FF33 /* FontAwesome.otf */; };
+		329993FA1BEB2ECA001CAF93 /* ThemeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329993F91BEB2ECA001CAF93 /* ThemeManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -27,6 +28,7 @@
 		324A65C81BE9F0D90002E30C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		324A65CE1BE9F6940002E30C /* SignInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignInViewController.swift; sourceTree = "<group>"; };
 		32524FB61BEB05090023FF33 /* FontAwesome.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome.otf; path = ../Pods/FontAwesomeKit/FontAwesomeKit/FontAwesome.otf; sourceTree = "<group>"; };
+		329993F91BEB2ECA001CAF93 /* ThemeManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ThemeManager.swift; sourceTree = "<group>"; };
 		6933F24D3329CBB09FC70F4E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -65,6 +67,7 @@
 			children = (
 				324A65BC1BE9F0D90002E30C /* AppDelegate.swift */,
 				324A65CE1BE9F6940002E30C /* SignInViewController.swift */,
+				329993F91BEB2ECA001CAF93 /* ThemeManager.swift */,
 				324A65C01BE9F0D90002E30C /* Main.storyboard */,
 				324A65C31BE9F0D90002E30C /* Assets.xcassets */,
 				324A65C51BE9F0D90002E30C /* LaunchScreen.storyboard */,
@@ -216,6 +219,7 @@
 			files = (
 				324A65BD1BE9F0D90002E30C /* AppDelegate.swift in Sources */,
 				324A65CF1BE9F6940002E30C /* SignInViewController.swift in Sources */,
+				329993FA1BEB2ECA001CAF93 /* ThemeManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
