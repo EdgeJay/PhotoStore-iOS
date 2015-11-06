@@ -12,8 +12,10 @@ import TextFieldEffects
 import FontAwesomeKit
 import MaterialControls
 
-class SignInViewController: UIViewController {
+class EmailSignInViewController: UIViewController {
     
+    @IBOutlet weak var scrollView: UIScrollView!
+    @IBOutlet weak var contentView: UIView!
     @IBOutlet weak var btnForgotPassword: MDButton!
     @IBOutlet weak var btnRevealPassword: UIButton!
     @IBOutlet weak var txtEmail: HoshiTextField!
@@ -27,7 +29,6 @@ class SignInViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         btnForgotPassword.backgroundColor = UIColor.clearColor()
-        
         btnRevealPassword.backgroundColor = UIColor.clearColor()
         btnRevealPassword.alpha = 0.3
         btnRevealPassword.setAttributedTitle(FAKFontAwesome.eyeIconWithSize(15.0).attributedString(), forState: .Normal)
@@ -38,6 +39,12 @@ class SignInViewController: UIViewController {
         txtVisiblePassword.addTarget(self, action: Selector("onTextChanged:"), forControlEvents: .EditingChanged)
         
         btnSignIn.enabled = false
+        
+        // need to add constraints for content view
+        let leftConstraint = NSLayoutConstraint(item: contentView, attribute: .Leading, relatedBy: .Equal, toItem: view, attribute: .Leading, multiplier: 1.0, constant: 20)
+        let rightConstraint = NSLayoutConstraint(item: view, attribute: .Trailing, relatedBy: .Equal, toItem: contentView, attribute: .Trailing, multiplier: 1.0, constant: 20)
+        //let bottomConstraint = NSLayoutConstraint(item: view, attribute: .Bottom, relatedBy: .Equal, toItem: contentView, attribute: .Bottom, multiplier: 1.0, constant: 100)
+        view.addConstraints([leftConstraint, rightConstraint])
         
         /*
         let user = PFUser()

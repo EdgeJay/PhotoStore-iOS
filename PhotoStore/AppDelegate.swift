@@ -10,6 +10,7 @@ import UIKit
 import FBSDKCoreKit
 import ParseFacebookUtilsV4
 import ChameleonFramework
+import IQKeyboardManagerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -20,13 +21,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         
         // setup app theme
-        ThemeManager.setupAppTheme()
+        UIManager.setupAppTheme()
         
         // Register with Parse.com
         Parse.setApplicationId("iI93PDWQH3BTUbaYYprMTHxmqaEsi9V4sb1ej77t", clientKey: "k565PRFVCnzfNkO2koVv2dZ1VO1NQnkDFpbUuEPp")
         
         // Track app open event
         PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)
+        
+        // For handling inputs with multiple textfields
+        IQKeyboardManager.sharedManager().enable = true
         
         return true
     }

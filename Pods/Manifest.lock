@@ -24,6 +24,7 @@ PODS:
   - FontAwesomeKit/Core (2.2.0)
   - FontAwesomeKit/FontAwesome (2.2.0):
     - FontAwesomeKit/Core
+  - IQKeyboardManagerSwift (3.3.4)
   - MaterialControls (1.0.2)
   - MBProgressHUD (0.9.1)
   - Parse (1.9.1):
@@ -42,6 +43,7 @@ DEPENDENCIES:
   - FBSDKLoginKit
   - FBSDKShareKit
   - FontAwesomeKit/FontAwesome
+  - IQKeyboardManagerSwift
   - MaterialControls
   - MBProgressHUD
   - Parse
@@ -56,6 +58,7 @@ SPEC CHECKSUMS:
   FBSDKLoginKit: c11ed3c2833472db3bb4a4aecf27af4a6f69b173
   FBSDKShareKit: 213adf63e073f41a346b0e7a689805880dc5150e
   FontAwesomeKit: 025fd4dd1017fe4e3f8d47b03e024deedbb33cd4
+  IQKeyboardManagerSwift: 6f2290d093f5269dc07bdae8bc58e968cf9c4738
   MaterialControls: bdeeb94aa049b73f70739a5514be137d2d45c08a
   MBProgressHUD: c47f2c166c126cf2ce36498d80f33e754d4e93ad
   Parse: 54a965c8c19a6dde90284ab654dbcc77ef8c001b
