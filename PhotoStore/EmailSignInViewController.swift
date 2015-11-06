@@ -24,6 +24,7 @@ class EmailSignInViewController: UIViewController {
     @IBOutlet weak var btnSignIn: MDButton!
     var passwordRevealed = false
     
+    // MARK: - View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -128,5 +129,18 @@ class EmailSignInViewController: UIViewController {
         }
         
         passwordRevealed = !passwordRevealed
+    }
+    
+    @IBAction func onSignIn(sender: AnyObject) {
+        if btnSignIn.enabled {
+            PFUser.logInWithUsernameInBackground(txtEmail.text!, password: txtPassword.text!, block: { (user: PFUser?, error: NSError?) -> Void in
+                if user != nil {
+                    // proceed to next screen
+                }
+                else {
+                    // login failed, show error
+                }
+            })
+        }
     }
 }
