@@ -13,7 +13,7 @@ import FontAwesomeKit
 import MaterialControls
 import MBProgressHUD
 
-class EmailSignInViewController: UIViewController {
+class EmailSignInViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var contentView: UIView!
@@ -37,7 +37,9 @@ class EmailSignInViewController: UIViewController {
         
         txtVisiblePassword.hidden = true
         txtEmail.addTarget(self, action: Selector("onTextChanged:"), forControlEvents: .EditingChanged)
+        txtEmail.delegate = self
         txtPassword.addTarget(self, action: Selector("onTextChanged:"), forControlEvents: .EditingChanged)
+        txtPassword.delegate = self
         txtVisiblePassword.addTarget(self, action: Selector("onTextChanged:"), forControlEvents: .EditingChanged)
         
         btnSignIn.enabled = false
@@ -109,6 +111,13 @@ class EmailSignInViewController: UIViewController {
     
     // MARK: - Login
     func performSignIn() {
+        if !btnSignIn.enabled {
+            return
+        }
+        
+        txtEmail.resignFirstResponder()
+        txtPassword.resignFirstResponder()
+        
         // display progress
         let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
         hud.labelText = "Signing in..."
@@ -124,7 +133,7 @@ class EmailSignInViewController: UIViewController {
                 // login failed, show error
                 let alertController = UIAlertController(
                     title: "Uh oh",
-                    message: "Something went wrong while\nsigning you in:\n\n\((error!).localizedDescription)",
+                    message: "Something went wrong while\nsigning you in:\n\n\((error!).localizedDescription.capitalizedString)",
                     preferredStyle: .Alert
                 )
                 
@@ -137,21 +146,39 @@ class EmailSignInViewController: UIViewController {
         })
     }
     
-    // MARK: - UI actions
-    func onTextChanged(sender: AnyObject) {
-        
-        btnSignIn.enabled = false
-        
+    // MARK: - Form validation
+    func validateForm() -> Bool {
         guard let _ = txtEmail.text, _ = (passwordRevealed ? txtVisiblePassword.text: txtPassword.text) else {
-            return
+            return false
         }
         
         if NSString(string: txtEmail.text!).stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()).characters.count > 0 &&
             ((!passwordRevealed && NSString(string: txtPassword.text!).stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()).characters.count > 0) ||
-            (passwordRevealed && NSString(string: txtVisiblePassword.text!).stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()).characters.count > 0)) {
-                
-            btnSignIn.enabled = true
+                (passwordRevealed && NSString(string: txtVisiblePassword.text!).stringByTrimmingCharactersInSet(NSCharacterSet.whitespaceCharacterSet()).characters.count > 0)) {
+                    
+                    return true
         }
+        
+        return false
+    }
+    
+    // MARK: - UITextFieldDelegate
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        btnSignIn.enabled = validateForm()
+        
+        if textField == txtEmail {
+            txtPassword.becomeFirstResponder()
+        }
+        else if textField == txtPassword {
+            performSignIn()
+        }
+        
+        return false
+    }
+    
+    // MARK: - UI actions
+    func onTextChanged(sender: AnyObject) {
+        btnSignIn.enabled = validateForm()
     }
     
     @IBAction func onRevealPassword(sender: AnyObject) {
@@ -174,8 +201,6 @@ class EmailSignInViewController: UIViewController {
     }
     
     @IBAction func onSignIn(sender: AnyObject) {
-        if btnSignIn.enabled {
-            performSignIn()
-        }
+        performSignIn()
     }
 }
