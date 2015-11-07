@@ -11,6 +11,7 @@ import Parse
 import TextFieldEffects
 import FontAwesomeKit
 import MaterialControls
+import MBProgressHUD
 
 class EmailSignInViewController: UIViewController {
     
@@ -42,9 +43,20 @@ class EmailSignInViewController: UIViewController {
         btnSignIn.enabled = false
         
         // need to add constraints for content view
-        let leftConstraint = NSLayoutConstraint(item: contentView, attribute: .Leading, relatedBy: .Equal, toItem: view, attribute: .Leading, multiplier: 1.0, constant: 20)
-        let rightConstraint = NSLayoutConstraint(item: view, attribute: .Trailing, relatedBy: .Equal, toItem: contentView, attribute: .Trailing, multiplier: 1.0, constant: 20)
-        //let bottomConstraint = NSLayoutConstraint(item: view, attribute: .Bottom, relatedBy: .Equal, toItem: contentView, attribute: .Bottom, multiplier: 1.0, constant: 100)
+        let leftConstraint = NSLayoutConstraint(item: contentView,
+            attribute: .Leading,
+            relatedBy: .Equal,
+            toItem: view,
+            attribute: .Leading,
+            multiplier: 1.0,
+            constant: 20)
+        let rightConstraint = NSLayoutConstraint(item: view,
+            attribute: .Trailing,
+            relatedBy: .Equal,
+            toItem: contentView,
+            attribute: .Trailing,
+            multiplier: 1.0,
+            constant: 20)
         view.addConstraints([leftConstraint, rightConstraint])
         
         /*
@@ -95,6 +107,36 @@ class EmailSignInViewController: UIViewController {
     }
     */
     
+    // MARK: - Login
+    func performSignIn() {
+        // display progress
+        let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        hud.labelText = "Signing in..."
+        
+        PFUser.logInWithUsernameInBackground(txtEmail.text!, password: txtPassword.text!, block: { (user: PFUser?, error: NSError?) -> Void in
+            // dismiss progress display
+            hud.hide(true)
+            
+            if user != nil {
+                // proceed to next screen
+            }
+            else {
+                // login failed, show error
+                let alertController = UIAlertController(
+                    title: "Uh oh",
+                    message: "Something went wrong while\nsigning you in:\n\n\((error!).localizedDescription)",
+                    preferredStyle: .Alert
+                )
+                
+                // set actions
+                let okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
+                alertController.addAction(okAction)
+                
+                self.presentViewController(alertController, animated: true, completion: nil)
+            }
+        })
+    }
+    
     // MARK: - UI actions
     func onTextChanged(sender: AnyObject) {
         
@@ -133,14 +175,7 @@ class EmailSignInViewController: UIViewController {
     
     @IBAction func onSignIn(sender: AnyObject) {
         if btnSignIn.enabled {
-            PFUser.logInWithUsernameInBackground(txtEmail.text!, password: txtPassword.text!, block: { (user: PFUser?, error: NSError?) -> Void in
-                if user != nil {
-                    // proceed to next screen
-                }
-                else {
-                    // login failed, show error
-                }
-            })
+            performSignIn()
         }
     }
 }
