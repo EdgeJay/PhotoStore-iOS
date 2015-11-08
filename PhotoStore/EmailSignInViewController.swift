@@ -41,6 +41,7 @@ class EmailSignInViewController: UIViewController, UITextFieldDelegate {
         txtPassword.addTarget(self, action: Selector("onTextChanged:"), forControlEvents: .EditingChanged)
         txtPassword.delegate = self
         txtVisiblePassword.addTarget(self, action: Selector("onTextChanged:"), forControlEvents: .EditingChanged)
+        txtVisiblePassword.delegate = self
         
         btnSignIn.enabled = false
         
@@ -60,38 +61,6 @@ class EmailSignInViewController: UIViewController, UITextFieldDelegate {
             multiplier: 1.0,
             constant: 20)
         view.addConstraints([leftConstraint, rightConstraint])
-        
-        /*
-        let user = PFUser()
-        user.username = "HJWU123"
-        user.password = "password"
-        user.email = "hjwu85+user123@gmail.com"
-        user["phone"] = "+6591234567"
-        user.signUpInBackgroundWithBlock { (success: Bool, error: NSError?) -> Void in
-            guard let _ = error else {
-                // no errors
-                if success {
-                    print("user created")
-                }
-                else {
-                    print("user not created")
-                }
-                return
-            }
-            
-            // if this portion can be reached means there's an error, do something about it
-            let alertController = UIAlertController(
-                title: "Uh oh",
-                message: "Something went wrong while\nsigning you up\n\n\((error!).localizedDescription)",
-                preferredStyle: .Alert
-            )
-            // set actions
-            let okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
-            alertController.addAction(okAction)
-            
-            self.presentViewController(alertController, animated: true, completion: nil)
-        }
-        */
     }
 
     override func didReceiveMemoryWarning() {
@@ -115,8 +84,14 @@ class EmailSignInViewController: UIViewController, UITextFieldDelegate {
             return
         }
         
+        // hide password if revealed
+        if passwordRevealed {
+            togglePasswordVisibility()
+        }
+        
         txtEmail.resignFirstResponder()
         txtPassword.resignFirstResponder()
+        txtVisiblePassword.resignFirstResponder()
         
         // display progress
         let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
@@ -167,9 +142,14 @@ class EmailSignInViewController: UIViewController, UITextFieldDelegate {
         btnSignIn.enabled = validateForm()
         
         if textField == txtEmail {
-            txtPassword.becomeFirstResponder()
+            if !passwordRevealed {
+                txtPassword.becomeFirstResponder()
+            }
+            else {
+                txtVisiblePassword.becomeFirstResponder()
+            }
         }
-        else if textField == txtPassword {
+        else if textField == txtPassword || textField == txtVisiblePassword {
             performSignIn()
         }
         
@@ -181,7 +161,7 @@ class EmailSignInViewController: UIViewController, UITextFieldDelegate {
         btnSignIn.enabled = validateForm()
     }
     
-    @IBAction func onRevealPassword(sender: AnyObject) {
+    func togglePasswordVisibility() {
         if passwordRevealed {
             btnRevealPassword.alpha = 0.3
             txtPassword.hidden = false
@@ -198,6 +178,10 @@ class EmailSignInViewController: UIViewController, UITextFieldDelegate {
         }
         
         passwordRevealed = !passwordRevealed
+    }
+    
+    @IBAction func onRevealPassword(sender: AnyObject) {
+        togglePasswordVisibility()
     }
     
     @IBAction func onSignIn(sender: AnyObject) {
