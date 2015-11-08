@@ -17,6 +17,7 @@
 		324A65C41BE9F0D90002E30C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 324A65C31BE9F0D90002E30C /* Assets.xcassets */; };
 		324A65C71BE9F0D90002E30C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 324A65C51BE9F0D90002E30C /* LaunchScreen.storyboard */; };
 		32524FB71BEB05090023FF33 /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = 32524FB61BEB05090023FF33 /* FontAwesome.otf */; };
+		329729D11BEF11360089BD09 /* EmailSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329729D01BEF11360089BD09 /* EmailSignUpViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		324A65C61BE9F0D90002E30C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		324A65C81BE9F0D90002E30C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		32524FB61BEB05090023FF33 /* FontAwesome.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome.otf; path = ../Pods/FontAwesomeKit/FontAwesomeKit/FontAwesome.otf; sourceTree = "<group>"; };
+		329729D01BEF11360089BD09 /* EmailSignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailSignUpViewController.swift; sourceTree = "<group>"; };
 		6933F24D3329CBB09FC70F4E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -72,6 +74,7 @@
 				324A349E1BEC97D80001F69F /* UIManager.swift */,
 				324A65BC1BE9F0D90002E30C /* AppDelegate.swift */,
 				324A349A1BEC80C70001F69F /* AccountChoiceViewController.swift */,
+				329729D01BEF11360089BD09 /* EmailSignUpViewController.swift */,
 				324A349C1BEC81770001F69F /* EmailSignInViewController.swift */,
 				324A34A01BECA40D0001F69F /* ForgotPasswordViewController.swift */,
 				324A65C01BE9F0D90002E30C /* Main.storyboard */,
@@ -224,6 +227,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				324A65BD1BE9F0D90002E30C /* AppDelegate.swift in Sources */,
+				329729D11BEF11360089BD09 /* EmailSignUpViewController.swift in Sources */,
 				324A34A11BECA40D0001F69F /* ForgotPasswordViewController.swift in Sources */,
 				324A349D1BEC81770001F69F /* EmailSignInViewController.swift in Sources */,
 				324A349B1BEC80C70001F69F /* AccountChoiceViewController.swift in Sources */,
