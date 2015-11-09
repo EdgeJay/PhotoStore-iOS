@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 import MaterialControls
 
 class AccountChoiceViewController: UIViewController {
@@ -17,6 +18,7 @@ class AccountChoiceViewController: UIViewController {
     @IBOutlet weak var btnConnectTwitter: MDButton!
     @IBOutlet var socialMediaButtons: [MDButton]!
     
+    // MARK: View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,13 +28,28 @@ class AccountChoiceViewController: UIViewController {
             button.backgroundColor = UIColor.clearColor()
         }
     }
-
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        validateParseUser()
+    }
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-
+    // MARK: Parse
+    func validateParseUser() {
+        guard let _ = PFUser.currentUser() else {
+            // user not found
+            return
+        }
+        
+        // user found
+        gotoHome()
+    }
+    
     /*
     // MARK: - Navigation
 
@@ -42,5 +59,10 @@ class AccountChoiceViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+    func gotoHome() {
+        if let navController = navigationController {
+            navController.performSegueWithIdentifier("GotoHome", sender: self)
+        }
+    }
 }

@@ -118,7 +118,7 @@ class EmailSignUpViewController: UIViewController, UITextFieldDelegate {
             if let _ = error {
                 // got error
                 alertController.title = "Oops"
-                alertController.message = "Something went wrong while\nsigning you up:\n\n\((error!).localizedDescription)"
+                alertController.message = "Something went wrong while\nsigning you up:\n\n\((error!).localizedDescription.capitalizedString)"
                 alertController.addAction(okAction)
             }
             else {
