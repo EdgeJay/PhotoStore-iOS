@@ -39,15 +39,26 @@ class AccountChoiceViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    // MARK: Parse
+    // MARK: - Parse
+    /**
+        Attempts to find current Parse user from disk and validates its session token.
+        If user is found and validation passes, user will be redirected to `HomeViewController`
+    */
     func validateParseUser() {
         guard let _ = PFUser.currentUser() else {
             // user not found
             return
         }
         
-        // user found
-        gotoHome()
+        guard let _ = PFUser.currentUser()?.sessionToken else {
+            // session token not found
+            return
+        }
+        
+        PFUser.becomeInBackground((PFUser.currentUser()?.sessionToken)!, block: { (user: PFUser?, error: NSError?) -> Void in
+            // user found
+            self.gotoHome()
+        })
     }
     
     /*
@@ -60,6 +71,9 @@ class AccountChoiceViewController: UIViewController {
     }
     */
     
+    /**
+        Goto `HomeViewController`
+    */
     func gotoHome() {
         if let navController = navigationController {
             navController.performSegueWithIdentifier("GotoHome", sender: self)
