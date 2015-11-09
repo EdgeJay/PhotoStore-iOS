@@ -20,6 +20,10 @@
 		3260EC561BF034FB00A23D7F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3260EC551BF034FB00A23D7F /* HomeViewController.swift */; };
 		3260EC5A1BF03B5B00A23D7F /* ReplaceRootSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3260EC591BF03B5B00A23D7F /* ReplaceRootSegue.swift */; };
 		329729D11BEF11360089BD09 /* EmailSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329729D01BEF11360089BD09 /* EmailSignUpViewController.swift */; };
+		32FB38F91BF095DB00D717D3 /* HomeContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FB38F71BF095DB00D717D3 /* HomeContentViewController.swift */; };
+		32FB38FA1BF095DB00D717D3 /* HomeContentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32FB38F81BF095DB00D717D3 /* HomeContentViewController.xib */; };
+		32FB38FD1BF0962400D717D3 /* HomeLeftMenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FB38FB1BF0962400D717D3 /* HomeLeftMenuViewController.swift */; };
+		32FB38FE1BF0962400D717D3 /* HomeLeftMenuViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32FB38FC1BF0962400D717D3 /* HomeLeftMenuViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -39,6 +43,10 @@
 		3260EC551BF034FB00A23D7F /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		3260EC591BF03B5B00A23D7F /* ReplaceRootSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReplaceRootSegue.swift; sourceTree = "<group>"; };
 		329729D01BEF11360089BD09 /* EmailSignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailSignUpViewController.swift; sourceTree = "<group>"; };
+		32FB38F71BF095DB00D717D3 /* HomeContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeContentViewController.swift; sourceTree = "<group>"; };
+		32FB38F81BF095DB00D717D3 /* HomeContentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeContentViewController.xib; sourceTree = "<group>"; };
+		32FB38FB1BF0962400D717D3 /* HomeLeftMenuViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeLeftMenuViewController.swift; sourceTree = "<group>"; };
+		32FB38FC1BF0962400D717D3 /* HomeLeftMenuViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeLeftMenuViewController.xib; sourceTree = "<group>"; };
 		6933F24D3329CBB09FC70F4E /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -82,6 +90,10 @@
 				324A349C1BEC81770001F69F /* EmailSignInViewController.swift */,
 				324A34A01BECA40D0001F69F /* ForgotPasswordViewController.swift */,
 				3260EC551BF034FB00A23D7F /* HomeViewController.swift */,
+				32FB38F71BF095DB00D717D3 /* HomeContentViewController.swift */,
+				32FB38F81BF095DB00D717D3 /* HomeContentViewController.xib */,
+				32FB38FB1BF0962400D717D3 /* HomeLeftMenuViewController.swift */,
+				32FB38FC1BF0962400D717D3 /* HomeLeftMenuViewController.xib */,
 				3260EC591BF03B5B00A23D7F /* ReplaceRootSegue.swift */,
 				324A65C01BE9F0D90002E30C /* Main.storyboard */,
 				324A65C31BE9F0D90002E30C /* Assets.xcassets */,
@@ -170,8 +182,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32FB38FA1BF095DB00D717D3 /* HomeContentViewController.xib in Resources */,
 				32524FB71BEB05090023FF33 /* FontAwesome.otf in Resources */,
 				324A65C71BE9F0D90002E30C /* LaunchScreen.storyboard in Resources */,
+				32FB38FE1BF0962400D717D3 /* HomeLeftMenuViewController.xib in Resources */,
 				324A65C41BE9F0D90002E30C /* Assets.xcassets in Resources */,
 				324A65C21BE9F0D90002E30C /* Main.storyboard in Resources */,
 			);
@@ -232,9 +246,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				32FB38FD1BF0962400D717D3 /* HomeLeftMenuViewController.swift in Sources */,
 				324A65BD1BE9F0D90002E30C /* AppDelegate.swift in Sources */,
 				329729D11BEF11360089BD09 /* EmailSignUpViewController.swift in Sources */,
 				3260EC5A1BF03B5B00A23D7F /* ReplaceRootSegue.swift in Sources */,
+				32FB38F91BF095DB00D717D3 /* HomeContentViewController.swift in Sources */,
 				324A34A11BECA40D0001F69F /* ForgotPasswordViewController.swift in Sources */,
 				324A349D1BEC81770001F69F /* EmailSignInViewController.swift in Sources */,
 				324A349B1BEC80C70001F69F /* AccountChoiceViewController.swift in Sources */,

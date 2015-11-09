@@ -35,7 +35,7 @@ PODS:
     - FBSDKLoginKit (~> 4.7)
     - Parse (~> 1.9)
   - PermissionScope (1.0.1)
-  - TextFieldEffects (0.4.7)
+  - TextFieldEffects (0.4.8)
 
 DEPENDENCIES:
   - ChameleonFramework/Swift
@@ -64,6 +64,6 @@ SPEC CHECKSUMS:
   Parse: 54a965c8c19a6dde90284ab654dbcc77ef8c001b
   ParseFacebookUtilsV4: aadebfaaaf4a45bf0a0992863bf48c8fc49189e3
   PermissionScope: 9767066cedefd211d90a8c4f92f6f1a987085ee8
-  TextFieldEffects: 42af0369774020391382e593a7b12fdfe4e9e20f
+  TextFieldEffects: b2462ad57cfa1533dc28f84f360a942383cf5fb7
 
 COCOAPODS: 0.39.0
