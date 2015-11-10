@@ -13,6 +13,7 @@ import LGSideMenuController
 class HomeViewController: LGSideMenuController {
     
     var homeLeftMenuViewController: HomeLeftMenuViewController?
+    var homeFilterViewController: HomeFilterViewController?
     var homeContentViewController: HomeContentViewController?
     
     // MARK: View lifecycle
@@ -43,10 +44,18 @@ class HomeViewController: LGSideMenuController {
      Main initialization block
      */
     func initialize() {
-        // setup side menus
+        
+        // setup side menu
         homeLeftMenuViewController = HomeLeftMenuViewController(
             nibName: "HomeLeftMenuViewController",
             bundle: NSBundle.mainBundle())
+        
+        // setup filter menu
+        homeFilterViewController = HomeFilterViewController(
+            nibName: "HomeFilterViewController",
+            bundle: NSBundle.mainBundle())
+        
+        // main content view
         homeContentViewController = HomeContentViewController(
             nibName: "HomeContentViewController",
             bundle: NSBundle.mainBundle())
@@ -61,6 +70,14 @@ class HomeViewController: LGSideMenuController {
         leftViewStatusBarStyle = .Default
         leftViewStatusBarVisibleOptions = LGSideMenuStatusBarVisibleOnNone
         leftView().addSubview(homeLeftMenuViewController!.view)
+        
+        // filter menu
+        setRightViewEnabledWithWidth(200.0,
+            presentationStyle: LGSideMenuPresentationStyleSlideAbove,
+            alwaysVisibleOptions: LGSideMenuAlwaysVisibleOnNone)
+        rightViewStatusBarStyle = .Default
+        rightViewStatusBarVisibleOptions = LGSideMenuStatusBarVisibleOnAll
+        rightView().addSubview(homeFilterViewController!.view)
     }
     
     // MARK: - Parse

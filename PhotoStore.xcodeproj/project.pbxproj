@@ -23,6 +23,8 @@
 		3294E12E1BF1F370004E0099 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3294E12D1BF1F370004E0099 /* NavigationController.swift */; };
 		3294E1301BF1F445004E0099 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3294E12F1BF1F445004E0099 /* Home.storyboard */; };
 		3294E1351BF1FC9E004E0099 /* test_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 3294E1341BF1FC9E004E0099 /* test_image.png */; };
+		3294E1391BF24D78004E0099 /* HomeFilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3294E1371BF24D78004E0099 /* HomeFilterViewController.swift */; };
+		3294E13A1BF24D78004E0099 /* HomeFilterViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3294E1381BF24D78004E0099 /* HomeFilterViewController.xib */; };
 		329729D11BEF11360089BD09 /* EmailSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329729D01BEF11360089BD09 /* EmailSignUpViewController.swift */; };
 		32FB38F91BF095DB00D717D3 /* HomeContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FB38F71BF095DB00D717D3 /* HomeContentViewController.swift */; };
 		32FB38FA1BF095DB00D717D3 /* HomeContentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32FB38F81BF095DB00D717D3 /* HomeContentViewController.xib */; };
@@ -50,6 +52,8 @@
 		3294E12D1BF1F370004E0099 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		3294E12F1BF1F445004E0099 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		3294E1341BF1FC9E004E0099 /* test_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test_image.png; sourceTree = "<group>"; };
+		3294E1371BF24D78004E0099 /* HomeFilterViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeFilterViewController.swift; sourceTree = "<group>"; };
+		3294E1381BF24D78004E0099 /* HomeFilterViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeFilterViewController.xib; sourceTree = "<group>"; };
 		329729D01BEF11360089BD09 /* EmailSignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailSignUpViewController.swift; sourceTree = "<group>"; };
 		32FB38F71BF095DB00D717D3 /* HomeContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeContentViewController.swift; sourceTree = "<group>"; };
 		32FB38F81BF095DB00D717D3 /* HomeContentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeContentViewController.xib; sourceTree = "<group>"; };
@@ -136,6 +140,8 @@
 				32FB38F81BF095DB00D717D3 /* HomeContentViewController.xib */,
 				32FB38FB1BF0962400D717D3 /* HomeLeftMenuViewController.swift */,
 				32FB38FC1BF0962400D717D3 /* HomeLeftMenuViewController.xib */,
+				3294E1371BF24D78004E0099 /* HomeFilterViewController.swift */,
+				3294E1381BF24D78004E0099 /* HomeFilterViewController.xib */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -234,6 +240,7 @@
 				32FB38FE1BF0962400D717D3 /* HomeLeftMenuViewController.xib in Resources */,
 				324A65C41BE9F0D90002E30C /* Assets.xcassets in Resources */,
 				324A65C21BE9F0D90002E30C /* Main.storyboard in Resources */,
+				3294E13A1BF24D78004E0099 /* HomeFilterViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -301,6 +308,7 @@
 				324A34A11BECA40D0001F69F /* ForgotPasswordViewController.swift in Sources */,
 				324A349D1BEC81770001F69F /* EmailSignInViewController.swift in Sources */,
 				324A349B1BEC80C70001F69F /* AccountChoiceViewController.swift in Sources */,
+				3294E1391BF24D78004E0099 /* HomeFilterViewController.swift in Sources */,
 				3260EC561BF034FB00A23D7F /* HomeViewController.swift in Sources */,
 				3294E12C1BF1E63D004E0099 /* HomeNavigationControllerViewController.swift in Sources */,
 				324A349F1BEC97D80001F69F /* UIManager.swift in Sources */,

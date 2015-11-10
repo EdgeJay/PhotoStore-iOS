@@ -44,6 +44,6 @@ class HomeContentViewController: UIViewController {
     }
     
     func onFilterClicked(sender: AnyObject) {
-        
+        (navigationController?.parentViewController as? LGSideMenuController)?.showRightViewAnimated(true, completionHandler: nil)
     }
 }
