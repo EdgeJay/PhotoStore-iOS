@@ -138,4 +138,9 @@ class HomeViewController: LGSideMenuController {
         super.leftViewWillLayoutSubviewsWithSize(size)
         homeLeftMenuViewController?.view.frame = CGRectMake(0.0, 0.0, size.width, size.height)
     }
+    
+    override func rightViewWillLayoutSubviewsWithSize(size: CGSize) {
+        super.rightViewWillLayoutSubviewsWithSize(size)
+        homeFilterViewController?.view.frame = CGRectMake(0.0, 0.0, size.width, size.height)
+    }
 }
