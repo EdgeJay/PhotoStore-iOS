@@ -102,9 +102,7 @@ class EmailSignInViewController: UIViewController, UITextFieldDelegate {
             hud.hide(true)
             
             if user != nil {
-                if let navController = self.navigationController {
-                   navController.performSegueWithIdentifier("GotoHome", sender: self)
-                }
+                (self.navigationController as? NavigationController)?.gotoHome()
             }
             else {
                 // login failed, show error

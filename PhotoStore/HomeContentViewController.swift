@@ -14,6 +14,8 @@ class HomeContentViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "icon_menu"),
+            style: .Plain, target: self, action: Selector("onMenuClicked:"))
     }
 
     override func didReceiveMemoryWarning() {
@@ -31,5 +33,9 @@ class HomeContentViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-
+    
+    // MARK: - UI actions
+    func onMenuClicked(sender: AnyObject) {
+        
+    }
 }

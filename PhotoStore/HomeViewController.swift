@@ -8,14 +8,24 @@
 
 import UIKit
 import Parse
+import LGSideMenuController
 
-class HomeViewController: UIViewController {
-
+class HomeViewController: LGSideMenuController {
+    
+    var homeLeftMenuViewController: HomeLeftMenuViewController?
+    var homeContentViewController: HomeContentViewController?
+    
+    // MARK: View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        
+        initialize()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: true)
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -26,6 +36,31 @@ class HomeViewController: UIViewController {
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: - Initialization
+    /**
+     Main initialization block
+     */
+    func initialize() {
+        // setup side menus
+        homeLeftMenuViewController = HomeLeftMenuViewController(
+            nibName: "HomeLeftMenuViewController",
+            bundle: NSBundle.mainBundle())
+        homeContentViewController = HomeContentViewController(
+            nibName: "HomeContentViewController",
+            bundle: NSBundle.mainBundle())
+        let homeNavController = HomeNavigationControllerViewController(rootViewController: homeContentViewController!)
+        
+        self.rootViewController = homeNavController
+        
+        // side menu
+        setLeftViewEnabledWithWidth(250.0,
+            presentationStyle: LGSideMenuPresentationStyleScaleFromBig,
+            alwaysVisibleOptions: LGSideMenuAlwaysVisibleOnNone)
+        leftViewStatusBarStyle = .Default
+        leftViewStatusBarVisibleOptions = LGSideMenuStatusBarVisibleOnAll
+        leftView().addSubview(homeLeftMenuViewController!.view)
     }
     
     // MARK: - Parse
@@ -80,4 +115,10 @@ class HomeViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    // MARK: - Layout
+    override func leftViewWillLayoutSubviewsWithSize(size: CGSize) {
+        super.leftViewWillLayoutSubviewsWithSize(size)
+        homeLeftMenuViewController?.view.frame = CGRectMake(0.0, 0.0, size.width, size.height)
+    }
 }

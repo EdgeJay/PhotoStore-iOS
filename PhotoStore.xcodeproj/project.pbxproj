@@ -19,6 +19,10 @@
 		32524FB71BEB05090023FF33 /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = 32524FB61BEB05090023FF33 /* FontAwesome.otf */; };
 		3260EC561BF034FB00A23D7F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3260EC551BF034FB00A23D7F /* HomeViewController.swift */; };
 		3260EC5A1BF03B5B00A23D7F /* ReplaceRootSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3260EC591BF03B5B00A23D7F /* ReplaceRootSegue.swift */; };
+		3294E12C1BF1E63D004E0099 /* HomeNavigationControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3294E12B1BF1E63D004E0099 /* HomeNavigationControllerViewController.swift */; };
+		3294E12E1BF1F370004E0099 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3294E12D1BF1F370004E0099 /* NavigationController.swift */; };
+		3294E1301BF1F445004E0099 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3294E12F1BF1F445004E0099 /* Home.storyboard */; };
+		3294E1351BF1FC9E004E0099 /* test_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 3294E1341BF1FC9E004E0099 /* test_image.png */; };
 		329729D11BEF11360089BD09 /* EmailSignUpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 329729D01BEF11360089BD09 /* EmailSignUpViewController.swift */; };
 		32FB38F91BF095DB00D717D3 /* HomeContentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 32FB38F71BF095DB00D717D3 /* HomeContentViewController.swift */; };
 		32FB38FA1BF095DB00D717D3 /* HomeContentViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 32FB38F81BF095DB00D717D3 /* HomeContentViewController.xib */; };
@@ -42,6 +46,10 @@
 		32524FB61BEB05090023FF33 /* FontAwesome.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome.otf; path = ../Pods/FontAwesomeKit/FontAwesomeKit/FontAwesome.otf; sourceTree = "<group>"; };
 		3260EC551BF034FB00A23D7F /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		3260EC591BF03B5B00A23D7F /* ReplaceRootSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReplaceRootSegue.swift; sourceTree = "<group>"; };
+		3294E12B1BF1E63D004E0099 /* HomeNavigationControllerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeNavigationControllerViewController.swift; sourceTree = "<group>"; };
+		3294E12D1BF1F370004E0099 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		3294E12F1BF1F445004E0099 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
+		3294E1341BF1FC9E004E0099 /* test_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test_image.png; sourceTree = "<group>"; };
 		329729D01BEF11360089BD09 /* EmailSignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EmailSignUpViewController.swift; sourceTree = "<group>"; };
 		32FB38F71BF095DB00D717D3 /* HomeContentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeContentViewController.swift; sourceTree = "<group>"; };
 		32FB38F81BF095DB00D717D3 /* HomeContentViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = HomeContentViewController.xib; sourceTree = "<group>"; };
@@ -83,25 +91,61 @@
 		324A65BB1BE9F0D90002E30C /* PhotoStore */ = {
 			isa = PBXGroup;
 			children = (
-				324A349E1BEC97D80001F69F /* UIManager.swift */,
 				324A65BC1BE9F0D90002E30C /* AppDelegate.swift */,
-				324A349A1BEC80C70001F69F /* AccountChoiceViewController.swift */,
-				329729D01BEF11360089BD09 /* EmailSignUpViewController.swift */,
-				324A349C1BEC81770001F69F /* EmailSignInViewController.swift */,
-				324A34A01BECA40D0001F69F /* ForgotPasswordViewController.swift */,
-				3260EC551BF034FB00A23D7F /* HomeViewController.swift */,
-				32FB38F71BF095DB00D717D3 /* HomeContentViewController.swift */,
-				32FB38F81BF095DB00D717D3 /* HomeContentViewController.xib */,
-				32FB38FB1BF0962400D717D3 /* HomeLeftMenuViewController.swift */,
-				32FB38FC1BF0962400D717D3 /* HomeLeftMenuViewController.xib */,
-				3260EC591BF03B5B00A23D7F /* ReplaceRootSegue.swift */,
+				3294E1321BF1F46D004E0099 /* Common */,
+				3294E1311BF1F45A004E0099 /* SignIn */,
+				3294E1331BF1F494004E0099 /* Home */,
 				324A65C01BE9F0D90002E30C /* Main.storyboard */,
+				3294E12F1BF1F445004E0099 /* Home.storyboard */,
+				3294E1361BF1FCA1004E0099 /* Resources */,
 				324A65C31BE9F0D90002E30C /* Assets.xcassets */,
 				324A65C51BE9F0D90002E30C /* LaunchScreen.storyboard */,
 				324A65C81BE9F0D90002E30C /* Info.plist */,
 				32524FB61BEB05090023FF33 /* FontAwesome.otf */,
 			);
 			path = PhotoStore;
+			sourceTree = "<group>";
+		};
+		3294E1311BF1F45A004E0099 /* SignIn */ = {
+			isa = PBXGroup;
+			children = (
+				3294E12D1BF1F370004E0099 /* NavigationController.swift */,
+				324A349A1BEC80C70001F69F /* AccountChoiceViewController.swift */,
+				329729D01BEF11360089BD09 /* EmailSignUpViewController.swift */,
+				324A349C1BEC81770001F69F /* EmailSignInViewController.swift */,
+				324A34A01BECA40D0001F69F /* ForgotPasswordViewController.swift */,
+			);
+			name = SignIn;
+			sourceTree = "<group>";
+		};
+		3294E1321BF1F46D004E0099 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				324A349E1BEC97D80001F69F /* UIManager.swift */,
+				3260EC591BF03B5B00A23D7F /* ReplaceRootSegue.swift */,
+			);
+			name = Common;
+			sourceTree = "<group>";
+		};
+		3294E1331BF1F494004E0099 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				3260EC551BF034FB00A23D7F /* HomeViewController.swift */,
+				3294E12B1BF1E63D004E0099 /* HomeNavigationControllerViewController.swift */,
+				32FB38F71BF095DB00D717D3 /* HomeContentViewController.swift */,
+				32FB38F81BF095DB00D717D3 /* HomeContentViewController.xib */,
+				32FB38FB1BF0962400D717D3 /* HomeLeftMenuViewController.swift */,
+				32FB38FC1BF0962400D717D3 /* HomeLeftMenuViewController.xib */,
+			);
+			name = Home;
+			sourceTree = "<group>";
+		};
+		3294E1361BF1FCA1004E0099 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				3294E1341BF1FC9E004E0099 /* test_image.png */,
+			);
+			name = Resources;
 			sourceTree = "<group>";
 		};
 		6F3062D133EBBC0FFE788772 /* Frameworks */ = {
@@ -182,8 +226,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3294E1301BF1F445004E0099 /* Home.storyboard in Resources */,
 				32FB38FA1BF095DB00D717D3 /* HomeContentViewController.xib in Resources */,
 				32524FB71BEB05090023FF33 /* FontAwesome.otf in Resources */,
+				3294E1351BF1FC9E004E0099 /* test_image.png in Resources */,
 				324A65C71BE9F0D90002E30C /* LaunchScreen.storyboard in Resources */,
 				32FB38FE1BF0962400D717D3 /* HomeLeftMenuViewController.xib in Resources */,
 				324A65C41BE9F0D90002E30C /* Assets.xcassets in Resources */,
@@ -247,6 +293,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				32FB38FD1BF0962400D717D3 /* HomeLeftMenuViewController.swift in Sources */,
+				3294E12E1BF1F370004E0099 /* NavigationController.swift in Sources */,
 				324A65BD1BE9F0D90002E30C /* AppDelegate.swift in Sources */,
 				329729D11BEF11360089BD09 /* EmailSignUpViewController.swift in Sources */,
 				3260EC5A1BF03B5B00A23D7F /* ReplaceRootSegue.swift in Sources */,
@@ -255,6 +302,7 @@
 				324A349D1BEC81770001F69F /* EmailSignInViewController.swift in Sources */,
 				324A349B1BEC80C70001F69F /* AccountChoiceViewController.swift in Sources */,
 				3260EC561BF034FB00A23D7F /* HomeViewController.swift in Sources */,
+				3294E12C1BF1E63D004E0099 /* HomeNavigationControllerViewController.swift in Sources */,
 				324A349F1BEC97D80001F69F /* UIManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

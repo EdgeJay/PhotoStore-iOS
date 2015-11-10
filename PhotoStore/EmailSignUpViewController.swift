@@ -113,9 +113,7 @@ class EmailSignUpViewController: UIViewController, UITextFieldDelegate {
             let okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
             let continueAction = UIAlertAction(title: "Continue", style: .Default, handler: { alertAction -> Void in
                 // goto home view controller
-                if let navController = self.navigationController {
-                    navController.performSegueWithIdentifier("GotoHome", sender: self)
-                }
+                (self.navigationController as? NavigationController)?.gotoHome()
             })
             
             if let _ = error {

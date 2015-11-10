@@ -75,8 +75,6 @@ class AccountChoiceViewController: UIViewController {
         Goto `HomeViewController`
     */
     func gotoHome() {
-        if let navController = navigationController {
-            navController.performSegueWithIdentifier("GotoHome", sender: self)
-        }
+        (navigationController as? NavigationController)?.gotoHome()
     }
 }

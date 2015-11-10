@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="9Kz-eg-08b">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9059" systemVersion="15A284" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="9Kz-eg-08b">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9049"/>
@@ -420,7 +420,7 @@
             </objects>
             <point key="canvasLocation" x="2651" y="132"/>
         </scene>
-        <!--Welcome-->
+        <!--Account Choice View Controller-->
         <scene sceneID="7AT-d3-0Dz">
             <objects>
                 <viewController id="skh-Zm-hBi" customClass="AccountChoiceViewController" customModule="PhotoStore" customModuleProvider="target" sceneMemberID="viewController">
@@ -531,7 +531,7 @@
                             <constraint firstItem="n9K-fD-gTK" firstAttribute="top" secondItem="cnY-RN-6dc" secondAttribute="bottom" constant="8" id="zDM-sC-Fbw"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Welcome" id="sjY-eY-0yo">
+                    <navigationItem key="navigationItem" id="sjY-eY-0yo">
                         <barButtonItem key="backBarButtonItem" title="Back" id="nRS-dV-prM"/>
                         <barButtonItem key="rightBarButtonItem" title="Sign In" id="Ymb-GZ-RzM">
                             <connections>
@@ -553,29 +553,10 @@
             </objects>
             <point key="canvasLocation" x="1061" y="132"/>
         </scene>
-        <!--Home-->
-        <scene sceneID="1uG-sd-jOr">
-            <objects>
-                <viewController id="hVf-1j-egn" customClass="HomeViewController" customModule="PhotoStore" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="WcQ-C5-UpR"/>
-                        <viewControllerLayoutGuide type="bottom" id="lnH-HL-toc"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="dOo-cg-fLg">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                    <navigationItem key="navigationItem" title="Home" id="jZd-Xd-YIO"/>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bNX-jj-oD5" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1061" y="910"/>
-        </scene>
         <!--Navigation Controller-->
         <scene sceneID="0ak-Th-tRm">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9Kz-eg-08b" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="9Kz-eg-08b" customClass="NavigationController" customModule="PhotoStore" customModuleProvider="target" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="u4z-U4-Rfj">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -585,7 +566,6 @@
                     <nil name="viewControllers"/>
                     <connections>
                         <segue destination="skh-Zm-hBi" kind="relationship" relationship="rootViewController" id="f7l-ck-kar"/>
-                        <segue destination="hVf-1j-egn" kind="custom" identifier="GotoHome" customClass="ReplaceRootSegue" customModule="PhotoStore" customModuleProvider="target" id="3to-vL-3Mx"/>
                         <segue destination="skh-Zm-hBi" kind="custom" identifier="GotoAccountChoice" customClass="ReplaceRootSegue" customModule="PhotoStore" customModuleProvider="target" id="hHr-Y0-UXh"/>
                     </connections>
                 </navigationController>
