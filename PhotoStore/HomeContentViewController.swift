@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import LGSideMenuController
 
 class HomeContentViewController: UIViewController {
 
@@ -16,6 +17,9 @@ class HomeContentViewController: UIViewController {
         // Do any additional setup after loading the view.
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "icon_menu"),
             style: .Plain, target: self, action: Selector("onMenuClicked:"))
+        
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "icon_filter"),
+            style: .Plain, target: self, action: Selector("onFilterClicked:"))
     }
 
     override func didReceiveMemoryWarning() {
@@ -36,6 +40,10 @@ class HomeContentViewController: UIViewController {
     
     // MARK: - UI actions
     func onMenuClicked(sender: AnyObject) {
+        (navigationController?.parentViewController as? LGSideMenuController)?.showLeftViewAnimated(true, completionHandler: nil)
+    }
+    
+    func onFilterClicked(sender: AnyObject) {
         
     }
 }

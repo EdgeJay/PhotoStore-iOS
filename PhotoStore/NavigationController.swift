@@ -37,8 +37,13 @@ class NavigationController: UINavigationController {
         let storyboard = UIStoryboard(name: "Home", bundle: NSBundle.mainBundle())
         if let homeViewController = storyboard.instantiateInitialViewController() {
             if let window = UIApplication.sharedApplication().delegate?.window {
+                
+                // initialize home view controller 
+                (homeViewController as! HomeViewController).initialize()
+                
                 // change root view controller
                 window?.rootViewController = homeViewController
+                
                 // animate
                 UIView.transitionWithView(window!,
                     duration: 0.3,

@@ -20,7 +20,7 @@ class HomeViewController: LGSideMenuController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        initialize()
+        
     }
     
     override func viewWillAppear(animated: Bool) {
@@ -50,8 +50,8 @@ class HomeViewController: LGSideMenuController {
         homeContentViewController = HomeContentViewController(
             nibName: "HomeContentViewController",
             bundle: NSBundle.mainBundle())
-        let homeNavController = HomeNavigationControllerViewController(rootViewController: homeContentViewController!)
         
+        let homeNavController = HomeNavigationControllerViewController(rootViewController: homeContentViewController!)
         self.rootViewController = homeNavController
         
         // side menu
@@ -59,7 +59,7 @@ class HomeViewController: LGSideMenuController {
             presentationStyle: LGSideMenuPresentationStyleScaleFromBig,
             alwaysVisibleOptions: LGSideMenuAlwaysVisibleOnNone)
         leftViewStatusBarStyle = .Default
-        leftViewStatusBarVisibleOptions = LGSideMenuStatusBarVisibleOnAll
+        leftViewStatusBarVisibleOptions = LGSideMenuStatusBarVisibleOnNone
         leftView().addSubview(homeLeftMenuViewController!.view)
     }
     
