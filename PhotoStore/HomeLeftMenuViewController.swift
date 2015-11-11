@@ -7,10 +7,13 @@
 //
 
 import UIKit
+import Parse
+import FontAwesomeKit
 
 class HomeLeftMenuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
-    let menuItems: [String] = ["My Account", "Sign Out"]
+    let cellIdentifier = "MenuCell"
+    let menuItems: [String] = ["Settings", "Sign Out"]
     
     // MARK: - View lifecycle
     override func viewDidLoad() {
@@ -38,15 +41,31 @@ class HomeLeftMenuViewController: UIViewController, UITableViewDataSource, UITab
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCellWithIdentifier("MenuCell")
+        var cell = tableView.dequeueReusableCellWithIdentifier(cellIdentifier)
         if cell == nil {
-            cell = UITableViewCell(style: .Default, reuseIdentifier: "MenuCell")
+            // title
+            cell = UITableViewCell(style: .Value1, reuseIdentifier: cellIdentifier)
             cell?.textLabel?.textColor = UIColor.whiteColor()
-            cell?.tintColor = UIColor.whiteColor()
+            // status label
+            cell?.detailTextLabel?.textColor = UIColor.whiteColor()
             cell?.backgroundColor = UIColor.clearColor()
         }
         
         cell?.textLabel?.text = menuItems[indexPath.row]
+        
+        if indexPath.row == 0 {
+            if let user = PFUser.currentUser() {
+                let emailVerified = user["emailVerified"]
+                if emailVerified == nil {
+                    cell?.detailTextLabel?.attributedText = FAKFontAwesome.exclamationCircleIconWithSize(15.0).attributedString()
+                }
+                else {
+                    if !(emailVerified as! Bool) {
+                        cell?.detailTextLabel?.attributedText = FAKFontAwesome.exclamationCircleIconWithSize(15.0).attributedString()
+                    }
+                }
+            }
+        }
         
         return cell!
     }

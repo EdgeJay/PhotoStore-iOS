@@ -13,9 +13,12 @@ class HomeNavigationControllerViewController: UINavigationController {
         super.viewDidLoad()
         
         navigationBar.translucent = true
-        navigationBar.backgroundColor = UIColor.clearColor()
-        navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
-        navigationBar.shadowImage = UIImage()
+        // changes bar button item icon color
+        //navigationBar.tintColor = UIColor.whiteColor()
+        navigationBar.barTintColor = UIColor.whiteColor()
+        //navigationBar.backgroundColor = UIColor.clearColor()
+        //navigationBar.setBackgroundImage(UIImage(), forBarMetrics: .Default)
+        //navigationBar.shadowImage = UIImage()
     }
     
     override func shouldAutorotate() -> Bool {

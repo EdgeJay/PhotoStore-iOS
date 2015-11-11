@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import ChameleonFramework
 import LGSideMenuController
 
 class HomeContentViewController: UIViewController {
@@ -15,6 +16,11 @@ class HomeContentViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        view.backgroundColor = UIColor(hexString: "#cccccc")
+        
+        // setup nav bar title
+        navigationItem.title = "Your Photos"
+        // setup buttons for nav bar
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "icon_menu"),
             style: .Plain, target: self, action: Selector("onMenuClicked:"))
         
