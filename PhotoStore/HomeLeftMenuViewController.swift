@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import MBProgressHUD
 import FontAwesomeKit
 
 class HomeLeftMenuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
@@ -29,6 +30,28 @@ class HomeLeftMenuViewController: UIViewController, UITableViewDataSource, UITab
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    // MARK: - UI actions
+    func showSignOutAlert() {
+        let alertController = UIAlertController(
+            title: "Sign Out",
+            message: "Do you wish to sign out now?",
+            preferredStyle: .Alert)
+        alertController.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { (alertAction: UIAlertAction) -> Void in
+            self.signOut()
+        }))
+        alertController.addAction(UIAlertAction(title: "No", style: .Cancel, handler: nil))
+        
+        presentViewController(alertController, animated: true, completion: nil)
+    }
+    
+    func signOut() {
+        let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        
+        PFUser.logOutInBackgroundWithBlock { (error: NSError?) -> Void in
+            hud.hide(true)
+        }
     }
     
     // MARK: - UITableViewDataSource
@@ -73,5 +96,13 @@ class HomeLeftMenuViewController: UIViewController, UITableViewDataSource, UITab
     // MARK: - UITableViewDelegate
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
+        
+        if indexPath.row == 0 {
+            
+        }
+        else if indexPath.row == 1 {
+            // sign out
+            showSignOutAlert()
+        }
     }
 }
