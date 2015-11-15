@@ -9,6 +9,7 @@
 import UIKit
 import Parse
 import LGSideMenuController
+import MBProgressHUD
 
 class HomeViewController: LGSideMenuController, HomeLeftMenuViewControllerDelegate {
     
@@ -119,6 +120,15 @@ class HomeViewController: LGSideMenuController, HomeLeftMenuViewControllerDelega
         }
     }
     
+    func signOut() {
+        let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        
+        PFUser.logOutInBackgroundWithBlock { (error: NSError?) -> Void in
+            hud.hide(true)
+            self.gotoAccountChoice()
+        }
+    }
+    
     // MARK: - Alerts
     func showEmailNotVerifiedAlert() {
         let alertController = UIAlertController(
@@ -126,6 +136,19 @@ class HomeViewController: LGSideMenuController, HomeLeftMenuViewControllerDelega
             message: "Please check your inbox for verification email. You will not be able to access certain app features while email is unverified.",
             preferredStyle: .Alert)
         alertController.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
+        presentViewController(alertController, animated: true, completion: nil)
+    }
+    
+    func showSignOutAlert() {
+        let alertController = UIAlertController(
+            title: "Sign Out",
+            message: "Do you wish to sign out now?",
+            preferredStyle: .Alert)
+        alertController.addAction(UIAlertAction(title: "Yes", style: .Default, handler: { (alertAction: UIAlertAction) -> Void in
+            self.signOut()
+        }))
+        alertController.addAction(UIAlertAction(title: "No", style: .Cancel, handler: nil))
+        
         presentViewController(alertController, animated: true, completion: nil)
     }
     
@@ -157,6 +180,8 @@ class HomeViewController: LGSideMenuController, HomeLeftMenuViewControllerDelega
         }
     }
     
+    
+    
     // MARK: - Layout
     override func leftViewWillLayoutSubviewsWithSize(size: CGSize) {
         super.leftViewWillLayoutSubviewsWithSize(size)
@@ -174,6 +199,7 @@ class HomeViewController: LGSideMenuController, HomeLeftMenuViewControllerDelega
     }
     
     func onRequestSignOut() {
-        gotoAccountChoice()
+        // sign out
+        showSignOutAlert()
     }
 }
