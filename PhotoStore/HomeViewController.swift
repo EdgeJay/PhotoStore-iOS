@@ -10,7 +10,7 @@ import UIKit
 import Parse
 import LGSideMenuController
 
-class HomeViewController: LGSideMenuController {
+class HomeViewController: LGSideMenuController, HomeLeftMenuViewControllerDelegate {
     
     var homeLeftMenuViewController: HomeLeftMenuViewController?
     var homeFilterViewController: HomeFilterViewController?
@@ -49,11 +49,17 @@ class HomeViewController: LGSideMenuController {
         homeLeftMenuViewController = HomeLeftMenuViewController(
             nibName: "HomeLeftMenuViewController",
             bundle: NSBundle.mainBundle())
+        // set as delegate
+        homeLeftMenuViewController!.delegate = self
+        // add as child view controller
+        addChildViewController(homeLeftMenuViewController!)
         
         // setup filter menu
         homeFilterViewController = HomeFilterViewController(
             nibName: "HomeFilterViewController",
             bundle: NSBundle.mainBundle())
+        // add as child view controller
+        addChildViewController(homeFilterViewController!)
         
         // main content view
         homeContentViewController = HomeContentViewController(
@@ -133,6 +139,24 @@ class HomeViewController: LGSideMenuController {
     }
     */
     
+    func gotoAccountChoice() {
+        let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+        if let navViewController = storyboard.instantiateInitialViewController() {
+            if let window = UIApplication.sharedApplication().delegate?.window {
+                
+                // change root view controller
+                window?.rootViewController = navViewController
+                
+                // animate
+                UIView.transitionWithView(window!,
+                    duration: 0.3,
+                    options: .TransitionCrossDissolve,
+                    animations: nil,
+                    completion: nil)
+            }
+        }
+    }
+    
     // MARK: - Layout
     override func leftViewWillLayoutSubviewsWithSize(size: CGSize) {
         super.leftViewWillLayoutSubviewsWithSize(size)
@@ -142,5 +166,14 @@ class HomeViewController: LGSideMenuController {
     override func rightViewWillLayoutSubviewsWithSize(size: CGSize) {
         super.rightViewWillLayoutSubviewsWithSize(size)
         homeFilterViewController?.view.frame = CGRectMake(0.0, 0.0, size.width, size.height)
+    }
+    
+    // MARK: - HomeLeftMenuViewControllerDelegate
+    func onRequestSettings() {
+        
+    }
+    
+    func onRequestSignOut() {
+        gotoAccountChoice()
     }
 }

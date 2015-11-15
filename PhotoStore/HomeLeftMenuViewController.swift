@@ -11,10 +11,16 @@ import Parse
 import MBProgressHUD
 import FontAwesomeKit
 
+protocol HomeLeftMenuViewControllerDelegate {
+    func onRequestSettings()
+    func onRequestSignOut()
+}
+
 class HomeLeftMenuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
     let cellIdentifier = "MenuCell"
     let menuItems: [String] = ["Settings", "Sign Out"]
+    var delegate: HomeLeftMenuViewControllerDelegate?
     
     // MARK: - View lifecycle
     override func viewDidLoad() {
@@ -51,6 +57,7 @@ class HomeLeftMenuViewController: UIViewController, UITableViewDataSource, UITab
         
         PFUser.logOutInBackgroundWithBlock { (error: NSError?) -> Void in
             hud.hide(true)
+            self.delegate?.onRequestSignOut()
         }
     }
     

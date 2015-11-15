@@ -9,14 +9,17 @@
 import UIKit
 import Parse
 import MaterialControls
+import MBProgressHUD
 
 class AccountChoiceViewController: UIViewController {
 
+    @IBOutlet var btnSignInEmail: UIBarButtonItem!
     @IBOutlet weak var btnSignUpEmail: MDButton!
     @IBOutlet weak var btnConnectFacebook: MDButton!
     @IBOutlet weak var btnConnectGoogle: MDButton!
     @IBOutlet weak var btnConnectTwitter: MDButton!
     @IBOutlet var socialMediaButtons: [MDButton]!
+    @IBOutlet var dividerViews: [UIView]!
     
     // MARK: View lifecycle
     override func viewDidLoad() {
@@ -31,12 +34,32 @@ class AccountChoiceViewController: UIViewController {
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
+        showButtons(false);
         validateParseUser()
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func showButtons(show: Bool) {
+        if show {
+            navigationItem.rightBarButtonItem = btnSignInEmail
+        }
+        else {
+            navigationItem.rightBarButtonItem = nil
+        }
+        
+        btnSignUpEmail.hidden = !show
+        
+        for button in socialMediaButtons {
+            button.hidden = !show
+        }
+        
+        for view in dividerViews {
+            view.hidden = !show
+        }
     }
     
     // MARK: - Parse
@@ -46,31 +69,25 @@ class AccountChoiceViewController: UIViewController {
     */
     func validateParseUser() {
         guard let _ = PFUser.currentUser() else {
-            // user not found
+            showButtons(true)
             return
         }
         
         guard let _ = PFUser.currentUser()?.sessionToken else {
-            // session token not found
+            showButtons(true)
             return
         }
         
+        let hud = MBProgressHUD.showHUDAddedTo(self.view, animated: true)
+        
         PFUser.becomeInBackground((PFUser.currentUser()?.sessionToken)!, block: { (user: PFUser?, error: NSError?) -> Void in
             // user found
+            hud.hide(true)
             self.gotoHome()
         })
     }
     
-    /*
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
     /**
         Goto `HomeViewController`
     */
