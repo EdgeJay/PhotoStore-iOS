@@ -113,7 +113,10 @@ class EmailSignUpViewController: UIViewController, UITextFieldDelegate {
             let okAction = UIAlertAction(title: "OK", style: .Default, handler: nil)
             let continueAction = UIAlertAction(title: "Continue", style: .Default, handler: { alertAction -> Void in
                 // goto home view controller
-                (self.navigationController as? NavigationController)?.gotoHome()
+                //(self.navigationController as? NavigationController)?.gotoHome()
+                
+                // goto Connect Account View Controller
+                self.gotoConnectAccount()
             })
             
             if let _ = error {
@@ -141,6 +144,14 @@ class EmailSignUpViewController: UIViewController, UITextFieldDelegate {
             // display alert dialog
             self.presentViewController(alertController, animated: true, completion: nil)
         }
+    }
+    
+    func gotoConnectAccount() {
+        let connectAccountViewController = ConnectAccountViewController(
+            nibName: "ConnectAccountViewController",
+            bundle: NSBundle.mainBundle()
+        )
+        self.navigationController?.setViewControllers([connectAccountViewController], animated: true)
     }
     
     // MARK: - Form validation

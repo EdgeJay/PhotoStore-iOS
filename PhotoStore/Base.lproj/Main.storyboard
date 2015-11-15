@@ -420,7 +420,7 @@
             </objects>
             <point key="canvasLocation" x="2651" y="132"/>
         </scene>
-        <!--Account Choice View Controller-->
+        <!--Welcome-->
         <scene sceneID="7AT-d3-0Dz">
             <objects>
                 <viewController id="skh-Zm-hBi" customClass="AccountChoiceViewController" customModule="PhotoStore" customModuleProvider="target" sceneMemberID="viewController">
@@ -447,51 +447,6 @@
                                     <segue destination="POW-zc-8wa" kind="show" id="cff-0c-PZM"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zf9-vL-G8h" customClass="MDButton">
-                                <rect key="frame" x="190" y="166" width="220" height="40"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="0wq-vG-iY0"/>
-                                    <constraint firstAttribute="width" constant="220" id="jsJ-GB-XSo"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="18"/>
-                                <state key="normal" title="Connect with Facebook"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="type">
-                                        <integer key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cnY-RN-6dc" customClass="MDButton">
-                                <rect key="frame" x="190" y="214" width="220" height="40"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="220" id="Odo-Ci-NAq"/>
-                                    <constraint firstAttribute="height" constant="40" id="wQI-iB-zCz"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="18"/>
-                                <state key="normal" title="Connect with Google"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="type">
-                                        <integer key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n9K-fD-gTK" customClass="MDButton">
-                                <rect key="frame" x="190" y="262" width="220" height="40"/>
-                                <animations/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="qha-ye-eMT"/>
-                                    <constraint firstAttribute="width" constant="220" id="tPw-Yp-YRI"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="18"/>
-                                <state key="normal" title="Connect with Twitter"/>
-                                <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="number" keyPath="type">
-                                        <integer key="value" value="1"/>
-                                    </userDefinedRuntimeAttribute>
-                                </userDefinedRuntimeAttributes>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EIq-dL-X9p">
                                 <rect key="frame" x="20" y="146" width="560" height="1"/>
                                 <animations/>
@@ -512,26 +467,37 @@
                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="n9K-fD-gTK" customClass="MDButton">
+                                <rect key="frame" x="190" y="175" width="220" height="40"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="220" id="Sql-0c-tSk"/>
+                                    <constraint firstAttribute="height" constant="40" id="U8y-Mn-Xcp"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="GillSans" family="Gill Sans" pointSize="16"/>
+                                <state key="normal" title="Try out as guest"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="type">
+                                        <integer key="value" value="1"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="Zf9-vL-G8h" firstAttribute="centerX" secondItem="luI-c6-MHH" secondAttribute="centerX" id="5KT-JS-tUA"/>
-                            <constraint firstItem="Zf9-vL-G8h" firstAttribute="top" secondItem="ChX-jy-zEp" secondAttribute="bottom" constant="50" id="5RR-vu-BIh"/>
                             <constraint firstItem="EIq-dL-X9p" firstAttribute="leading" secondItem="luI-c6-MHH" secondAttribute="leadingMargin" id="5e7-t7-sXm"/>
-                            <constraint firstItem="cnY-RN-6dc" firstAttribute="centerX" secondItem="luI-c6-MHH" secondAttribute="centerX" id="8D0-yw-SYL"/>
+                            <constraint firstItem="n9K-fD-gTK" firstAttribute="centerX" secondItem="luI-c6-MHH" secondAttribute="centerX" id="7F2-5l-crf"/>
+                            <constraint firstItem="n9K-fD-gTK" firstAttribute="top" secondItem="Ly0-if-I7a" secondAttribute="bottom" constant="18" id="7OZ-O8-SSW"/>
                             <constraint firstAttribute="trailingMargin" secondItem="EIq-dL-X9p" secondAttribute="trailing" id="8mh-Kn-oyr"/>
                             <constraint firstItem="Ly0-if-I7a" firstAttribute="top" secondItem="ChX-jy-zEp" secondAttribute="bottom" constant="20" id="FVW-uq-IFb"/>
                             <constraint firstItem="EIq-dL-X9p" firstAttribute="top" secondItem="ChX-jy-zEp" secondAttribute="bottom" constant="30" id="PQD-WY-CZ7"/>
                             <constraint firstItem="ChX-jy-zEp" firstAttribute="centerX" secondItem="luI-c6-MHH" secondAttribute="centerX" id="Tu3-wx-fSL"/>
-                            <constraint firstItem="n9K-fD-gTK" firstAttribute="centerX" secondItem="luI-c6-MHH" secondAttribute="centerX" id="f5b-zD-gad"/>
                             <constraint firstItem="ChX-jy-zEp" firstAttribute="top" secondItem="b4X-e8-JfD" secondAttribute="bottom" constant="76" id="kfX-gF-uwx"/>
                             <constraint firstItem="Ly0-if-I7a" firstAttribute="centerX" secondItem="luI-c6-MHH" secondAttribute="centerX" id="p18-PC-LHP"/>
-                            <constraint firstItem="cnY-RN-6dc" firstAttribute="top" secondItem="Zf9-vL-G8h" secondAttribute="bottom" constant="8" id="xjO-ot-YcO"/>
-                            <constraint firstItem="n9K-fD-gTK" firstAttribute="top" secondItem="cnY-RN-6dc" secondAttribute="bottom" constant="8" id="zDM-sC-Fbw"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" id="sjY-eY-0yo">
+                    <navigationItem key="navigationItem" title="Welcome" id="sjY-eY-0yo">
                         <barButtonItem key="backBarButtonItem" title="Back" id="nRS-dV-prM"/>
                         <barButtonItem key="rightBarButtonItem" title="Sign In" id="Ymb-GZ-RzM">
                             <connections>
@@ -541,14 +507,9 @@
                     </navigationItem>
                     <simulatedNavigationBarMetrics key="simulatedTopBarMetrics" translucent="NO" prompted="NO"/>
                     <connections>
-                        <outlet property="btnConnectFacebook" destination="Zf9-vL-G8h" id="RlT-Hj-fTC"/>
-                        <outlet property="btnConnectGoogle" destination="cnY-RN-6dc" id="K2s-U9-TQg"/>
-                        <outlet property="btnConnectTwitter" destination="n9K-fD-gTK" id="WPL-qQ-S5z"/>
                         <outlet property="btnSignInEmail" destination="Ymb-GZ-RzM" id="Lra-Pv-fIu"/>
                         <outlet property="btnSignUpEmail" destination="ChX-jy-zEp" id="Yd5-aa-3Hg"/>
-                        <outletCollection property="socialMediaButtons" destination="Zf9-vL-G8h" collectionClass="NSMutableArray" id="m28-QE-Mql"/>
-                        <outletCollection property="socialMediaButtons" destination="cnY-RN-6dc" collectionClass="NSMutableArray" id="Z7M-Iv-EXh"/>
-                        <outletCollection property="socialMediaButtons" destination="n9K-fD-gTK" collectionClass="NSMutableArray" id="Flm-hW-rgD"/>
+                        <outlet property="btnTryAsGuest" destination="n9K-fD-gTK" id="ERm-ZB-HXN"/>
                         <outletCollection property="dividerViews" destination="EIq-dL-X9p" collectionClass="NSMutableArray" id="EqC-vD-Hwf"/>
                         <outletCollection property="dividerViews" destination="Ly0-if-I7a" collectionClass="NSMutableArray" id="hjT-hP-yYH"/>
                     </connections>

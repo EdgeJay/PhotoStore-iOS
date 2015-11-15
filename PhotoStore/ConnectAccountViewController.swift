@@ -1,5 +1,5 @@
 //
-//  SettingsViewController.swift
+//  ConnectAccountViewController.swift
 //  PhotoStore
 //
 //  Created by Huijie Wu on 15/11/15.
@@ -7,21 +7,17 @@
 //
 
 import UIKit
-import LGSideMenuController
 
-class SettingsViewController: UIViewController {
-
+class ConnectAccountViewController: UIViewController {
+    
+    @IBOutlet weak var scrollView: UIScrollView!
+    
+    // MARK: - View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        navigationItem.title = "Settings"
-        
-        // setup buttons for nav bar
-        navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "icon_menu"),
-            style: .Plain, target: self, action: Selector("onMenuClicked:"))
-        
-        UIManager.setNavigationBar(navigationController?.navigationBar, tintColor: UIColor.blackColor())
+        navigationItem.title = "Connect Account"
     }
 
     override func didReceiveMemoryWarning() {
@@ -29,6 +25,7 @@ class SettingsViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+
     /*
     // MARK: - Navigation
 
@@ -38,9 +35,4 @@ class SettingsViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
-    
-    // MARK: - UI actions
-    func onMenuClicked(sender: AnyObject) {
-        (navigationController?.parentViewController as? LGSideMenuController)?.showLeftViewAnimated(true, completionHandler: nil)
-    }
 }

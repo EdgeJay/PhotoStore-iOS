@@ -18,8 +18,9 @@ class HomeContentViewController: UIViewController {
         // Do any additional setup after loading the view.
         view.backgroundColor = UIColor(hexString: "#cccccc")
         
-        // setup nav bar title
+        // setup nav bar
         navigationItem.title = "Your Photos"
+        UIManager.setNavigationBar(navigationController?.navigationBar, tintColor: UIColor.blackColor())
         
         // setup buttons for nav bar
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "icon_menu"),

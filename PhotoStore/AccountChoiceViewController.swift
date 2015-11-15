@@ -13,23 +13,17 @@ import MBProgressHUD
 
 class AccountChoiceViewController: UIViewController {
 
-    @IBOutlet var btnSignInEmail: UIBarButtonItem!
+    @IBOutlet weak var btnSignInEmail: UIBarButtonItem!
     @IBOutlet weak var btnSignUpEmail: MDButton!
-    @IBOutlet weak var btnConnectFacebook: MDButton!
-    @IBOutlet weak var btnConnectGoogle: MDButton!
-    @IBOutlet weak var btnConnectTwitter: MDButton!
-    @IBOutlet var socialMediaButtons: [MDButton]!
+    @IBOutlet weak var btnTryAsGuest: MDButton!
     @IBOutlet var dividerViews: [UIView]!
     
     // MARK: View lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
-        for button in socialMediaButtons {
-            button.setTitleColor(UIManager.appPrimaryColor, forState: .Normal)
-            button.backgroundColor = UIColor.clearColor()
-        }
+        
+        btnTryAsGuest.setTitleColor(UIManager.appPrimaryColor, forState: .Normal)
+        btnTryAsGuest.backgroundColor = UIColor.clearColor()
     }
     
     override func viewDidAppear(animated: Bool) {
@@ -44,18 +38,9 @@ class AccountChoiceViewController: UIViewController {
     }
     
     func showButtons(show: Bool) {
-        if show {
-            navigationItem.rightBarButtonItem = btnSignInEmail
-        }
-        else {
-            navigationItem.rightBarButtonItem = nil
-        }
-        
+        navigationController?.setNavigationBarHidden(!show, animated: true)
         btnSignUpEmail.hidden = !show
-        
-        for button in socialMediaButtons {
-            button.hidden = !show
-        }
+        btnTryAsGuest.hidden = !show
         
         for view in dividerViews {
             view.hidden = !show
