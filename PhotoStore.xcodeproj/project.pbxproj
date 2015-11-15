@@ -19,7 +19,9 @@
 		32524FB71BEB05090023FF33 /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = 32524FB61BEB05090023FF33 /* FontAwesome.otf */; };
 		3260EC561BF034FB00A23D7F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3260EC551BF034FB00A23D7F /* HomeViewController.swift */; };
 		3260EC5A1BF03B5B00A23D7F /* ReplaceRootSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3260EC591BF03B5B00A23D7F /* ReplaceRootSegue.swift */; };
-		3294E12C1BF1E63D004E0099 /* HomeNavigationControllerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3294E12B1BF1E63D004E0099 /* HomeNavigationControllerViewController.swift */; };
+		3293C2191BF88AE30063A25E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3293C2171BF88AE30063A25E /* SettingsViewController.swift */; };
+		3293C21A1BF88AE30063A25E /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3293C2181BF88AE30063A25E /* SettingsViewController.xib */; };
+		3293C21C1BF88B9C0063A25E /* HomeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3293C21B1BF88B9C0063A25E /* HomeNavigationController.swift */; };
 		3294E12E1BF1F370004E0099 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3294E12D1BF1F370004E0099 /* NavigationController.swift */; };
 		3294E1301BF1F445004E0099 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3294E12F1BF1F445004E0099 /* Home.storyboard */; };
 		3294E1351BF1FC9E004E0099 /* test_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 3294E1341BF1FC9E004E0099 /* test_image.png */; };
@@ -48,7 +50,9 @@
 		32524FB61BEB05090023FF33 /* FontAwesome.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome.otf; path = ../Pods/FontAwesomeKit/FontAwesomeKit/FontAwesome.otf; sourceTree = "<group>"; };
 		3260EC551BF034FB00A23D7F /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		3260EC591BF03B5B00A23D7F /* ReplaceRootSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReplaceRootSegue.swift; sourceTree = "<group>"; };
-		3294E12B1BF1E63D004E0099 /* HomeNavigationControllerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeNavigationControllerViewController.swift; sourceTree = "<group>"; };
+		3293C2171BF88AE30063A25E /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
+		3293C2181BF88AE30063A25E /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
+		3293C21B1BF88B9C0063A25E /* HomeNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeNavigationController.swift; sourceTree = "<group>"; };
 		3294E12D1BF1F370004E0099 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		3294E12F1BF1F445004E0099 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		3294E1341BF1FC9E004E0099 /* test_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test_image.png; sourceTree = "<group>"; };
@@ -135,13 +139,15 @@
 			isa = PBXGroup;
 			children = (
 				3260EC551BF034FB00A23D7F /* HomeViewController.swift */,
-				3294E12B1BF1E63D004E0099 /* HomeNavigationControllerViewController.swift */,
+				3293C21B1BF88B9C0063A25E /* HomeNavigationController.swift */,
 				32FB38F71BF095DB00D717D3 /* HomeContentViewController.swift */,
 				32FB38F81BF095DB00D717D3 /* HomeContentViewController.xib */,
 				32FB38FB1BF0962400D717D3 /* HomeLeftMenuViewController.swift */,
 				32FB38FC1BF0962400D717D3 /* HomeLeftMenuViewController.xib */,
 				3294E1371BF24D78004E0099 /* HomeFilterViewController.swift */,
 				3294E1381BF24D78004E0099 /* HomeFilterViewController.xib */,
+				3293C2171BF88AE30063A25E /* SettingsViewController.swift */,
+				3293C2181BF88AE30063A25E /* SettingsViewController.xib */,
 			);
 			name = Home;
 			sourceTree = "<group>";
@@ -241,6 +247,7 @@
 				324A65C41BE9F0D90002E30C /* Assets.xcassets in Resources */,
 				324A65C21BE9F0D90002E30C /* Main.storyboard in Resources */,
 				3294E13A1BF24D78004E0099 /* HomeFilterViewController.xib in Resources */,
+				3293C21A1BF88AE30063A25E /* SettingsViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -308,9 +315,10 @@
 				324A34A11BECA40D0001F69F /* ForgotPasswordViewController.swift in Sources */,
 				324A349D1BEC81770001F69F /* EmailSignInViewController.swift in Sources */,
 				324A349B1BEC80C70001F69F /* AccountChoiceViewController.swift in Sources */,
+				3293C2191BF88AE30063A25E /* SettingsViewController.swift in Sources */,
+				3293C21C1BF88B9C0063A25E /* HomeNavigationController.swift in Sources */,
 				3294E1391BF24D78004E0099 /* HomeFilterViewController.swift in Sources */,
 				3260EC561BF034FB00A23D7F /* HomeViewController.swift in Sources */,
-				3294E12C1BF1E63D004E0099 /* HomeNavigationControllerViewController.swift in Sources */,
 				324A349F1BEC97D80001F69F /* UIManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

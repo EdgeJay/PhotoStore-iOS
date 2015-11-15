@@ -15,7 +15,6 @@ class HomeViewController: LGSideMenuController, HomeLeftMenuViewControllerDelega
     
     var homeLeftMenuViewController: HomeLeftMenuViewController?
     var homeFilterViewController: HomeFilterViewController?
-    var homeContentViewController: HomeContentViewController?
     
     // MARK: View lifecycle
     override func viewDidLoad() {
@@ -63,11 +62,11 @@ class HomeViewController: LGSideMenuController, HomeLeftMenuViewControllerDelega
         addChildViewController(homeFilterViewController!)
         
         // main content view
-        homeContentViewController = HomeContentViewController(
+        let homeContentViewController = HomeContentViewController(
             nibName: "HomeContentViewController",
             bundle: NSBundle.mainBundle())
         
-        let homeNavController = HomeNavigationControllerViewController(rootViewController: homeContentViewController!)
+        let homeNavController = HomeNavigationController(rootViewController: homeContentViewController)
         self.rootViewController = homeNavController
         
         // side menu
@@ -152,16 +151,7 @@ class HomeViewController: LGSideMenuController, HomeLeftMenuViewControllerDelega
         presentViewController(alertController, animated: true, completion: nil)
     }
     
-    /*
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
-    
     func gotoAccountChoice() {
         let storyboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
         if let navViewController = storyboard.instantiateInitialViewController() {
@@ -180,7 +170,41 @@ class HomeViewController: LGSideMenuController, HomeLeftMenuViewControllerDelega
         }
     }
     
+    func gotoPhotos() {
+        // close menu
+        hideLeftViewAnimated(true, completionHandler: nil)
+        
+        if rootNavigationController()?.viewControllers[0] is HomeContentViewController {
+            return
+        }
+        
+        // replace root view controller of HomeNavigationController
+        let homeContentViewController = HomeContentViewController(
+            nibName: "HomeContentViewController",
+            bundle: NSBundle.mainBundle()
+        )
+        rootNavigationController()?.setViewControllers([homeContentViewController], animated: false)
+    }
     
+    func gotoSettings() {
+        // close menu
+        hideLeftViewAnimated(true, completionHandler: nil)
+        
+        if rootNavigationController()?.viewControllers[0] is SettingsViewController {
+            return
+        }
+        
+        // replace root view controller of HomeNavigationController
+        let settingsViewController = SettingsViewController(
+            nibName: "SettingsViewController",
+            bundle: NSBundle.mainBundle()
+        )
+        rootNavigationController()?.setViewControllers([settingsViewController], animated: false)
+    }
+    
+    func rootNavigationController() -> HomeNavigationController? {
+        return (self.rootViewController as! HomeNavigationController)
+    }
     
     // MARK: - Layout
     override func leftViewWillLayoutSubviewsWithSize(size: CGSize) {
@@ -194,8 +218,12 @@ class HomeViewController: LGSideMenuController, HomeLeftMenuViewControllerDelega
     }
     
     // MARK: - HomeLeftMenuViewControllerDelegate
+    func onRequestPhotos() {
+        gotoPhotos()
+    }
+    
     func onRequestSettings() {
-        
+        gotoSettings()
     }
     
     func onRequestSignOut() {

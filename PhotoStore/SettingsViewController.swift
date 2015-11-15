@@ -1,32 +1,25 @@
 //
-//  HomeContentViewController.swift
+//  SettingsViewController.swift
 //  PhotoStore
 //
-//  Created by Wu Huijie on 9/11/15.
+//  Created by Huijie Wu on 15/11/15.
 //  Copyright © 2015 EdgeJay. All rights reserved.
 //
 
 import UIKit
-import ChameleonFramework
 import LGSideMenuController
 
-class HomeContentViewController: UIViewController {
+class SettingsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        view.backgroundColor = UIColor(hexString: "#cccccc")
-        
-        // setup nav bar title
-        navigationItem.title = "Your Photos"
+        navigationItem.title = "Settings"
         
         // setup buttons for nav bar
         navigationItem.leftBarButtonItem = UIBarButtonItem(image: UIImage(named: "icon_menu"),
             style: .Plain, target: self, action: Selector("onMenuClicked:"))
-        
-        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(named: "icon_filter"),
-            style: .Plain, target: self, action: Selector("onFilterClicked:"))
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,7 +27,6 @@ class HomeContentViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-
     /*
     // MARK: - Navigation
 
@@ -48,9 +40,5 @@ class HomeContentViewController: UIViewController {
     // MARK: - UI actions
     func onMenuClicked(sender: AnyObject) {
         (navigationController?.parentViewController as? LGSideMenuController)?.showLeftViewAnimated(true, completionHandler: nil)
-    }
-    
-    func onFilterClicked(sender: AnyObject) {
-        (navigationController?.parentViewController as? LGSideMenuController)?.showRightViewAnimated(true, completionHandler: nil)
     }
 }

@@ -12,6 +12,7 @@ import MBProgressHUD
 import FontAwesomeKit
 
 protocol HomeLeftMenuViewControllerDelegate {
+    func onRequestPhotos()
     func onRequestSettings()
     func onRequestSignOut()
 }
@@ -19,7 +20,7 @@ protocol HomeLeftMenuViewControllerDelegate {
 class HomeLeftMenuViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
     @IBOutlet weak var tableView: UITableView!
     let cellIdentifier = "MenuCell"
-    let menuItems: [String] = ["Settings", "Sign Out"]
+    let menuItems: [String] = ["Your Photos", "Settings", "Sign Out"]
     var delegate: HomeLeftMenuViewControllerDelegate?
     
     // MARK: - View lifecycle
@@ -60,15 +61,20 @@ class HomeLeftMenuViewController: UIViewController, UITableViewDataSource, UITab
         
         cell?.textLabel?.text = menuItems[indexPath.row]
         
-        if indexPath.row == 0 {
-            if let user = PFUser.currentUser() {
-                let emailVerified = user["emailVerified"]
-                if emailVerified == nil {
-                    cell?.detailTextLabel?.attributedText = FAKFontAwesome.exclamationCircleIconWithSize(15.0).attributedString()
-                }
-                else {
-                    if !(emailVerified as! Bool) {
-                        cell?.detailTextLabel?.attributedText = FAKFontAwesome.exclamationCircleIconWithSize(15.0).attributedString()
+        if let settingsIndex = menuItems.indexOf("Settings") {
+            if indexPath.row == settingsIndex {
+                if let user = PFUser.currentUser() {
+                    
+                    let emailVerified = user["emailVerified"]
+                    let exclamationText = FAKFontAwesome.exclamationCircleIconWithSize(15.0).attributedString()
+                    
+                    if emailVerified == nil {
+                        cell?.detailTextLabel?.attributedText = exclamationText
+                    }
+                    else {
+                        if !(emailVerified as! Bool) {
+                            cell?.detailTextLabel?.attributedText = exclamationText
+                        }
                     }
                 }
             }
@@ -82,9 +88,12 @@ class HomeLeftMenuViewController: UIViewController, UITableViewDataSource, UITab
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
         if indexPath.row == 0 {
-            
+            self.delegate?.onRequestPhotos()
         }
         else if indexPath.row == 1 {
+            self.delegate?.onRequestSettings()
+        }
+        else if indexPath.row == 2 {
             self.delegate?.onRequestSignOut()
         }
     }
