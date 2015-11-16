@@ -8,10 +8,22 @@
 
 import UIKit
 import ChameleonFramework
-import LGSideMenuController
+
+protocol HomeContentViewControllerDelegate: class {
+    /**
+        Triggered when user requests for left side menu to be opened
+    */
+    func onRequestLeftMenu()
+    
+    /**
+     Triggered when user requests for filter menu to be opened
+     */
+    func onRequestFilterMenu()
+}
 
 class HomeContentViewController: UIViewController {
-
+    weak var delegate: HomeContentViewControllerDelegate?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -48,10 +60,10 @@ class HomeContentViewController: UIViewController {
     
     // MARK: - UI actions
     func onMenuClicked(sender: AnyObject) {
-        (navigationController?.parentViewController as? LGSideMenuController)?.showLeftViewAnimated(true, completionHandler: nil)
+        delegate?.onRequestLeftMenu()
     }
     
     func onFilterClicked(sender: AnyObject) {
-        (navigationController?.parentViewController as? LGSideMenuController)?.showRightViewAnimated(true, completionHandler: nil)
+        delegate?.onRequestFilterMenu()
     }
 }

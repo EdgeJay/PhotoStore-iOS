@@ -11,7 +11,7 @@ import Parse
 import LGSideMenuController
 import MBProgressHUD
 
-class HomeViewController: LGSideMenuController, HomeLeftMenuViewControllerDelegate {
+class HomeViewController: LGSideMenuController, HomeContentViewControllerDelegate, HomeLeftMenuViewControllerDelegate {
     
     var homeLeftMenuViewController: HomeLeftMenuViewController?
     var homeFilterViewController: HomeFilterViewController?
@@ -65,6 +65,7 @@ class HomeViewController: LGSideMenuController, HomeLeftMenuViewControllerDelega
         let homeContentViewController = HomeContentViewController(
             nibName: "HomeContentViewController",
             bundle: NSBundle.mainBundle())
+        homeContentViewController.delegate = self
         
         let homeNavController = HomeNavigationController(rootViewController: homeContentViewController)
         self.rootViewController = homeNavController
@@ -215,6 +216,15 @@ class HomeViewController: LGSideMenuController, HomeLeftMenuViewControllerDelega
     override func rightViewWillLayoutSubviewsWithSize(size: CGSize) {
         super.rightViewWillLayoutSubviewsWithSize(size)
         homeFilterViewController?.view.frame = CGRectMake(0.0, 0.0, size.width, size.height)
+    }
+    
+    // MARK: - HomeContentViewControllerDelegate
+    func onRequestLeftMenu() {
+        showLeftViewAnimated(true, completionHandler: nil)
+    }
+    
+    func onRequestFilterMenu() {
+        showRightViewAnimated(true, completionHandler: nil)
     }
     
     // MARK: - HomeLeftMenuViewControllerDelegate

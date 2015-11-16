@@ -11,7 +11,7 @@ import Parse
 import MBProgressHUD
 import FontAwesomeKit
 
-protocol HomeLeftMenuViewControllerDelegate {
+protocol HomeLeftMenuViewControllerDelegate: class {
     func onRequestPhotos()
     func onRequestSettings()
     func onRequestSignOut()
@@ -21,7 +21,7 @@ class HomeLeftMenuViewController: UIViewController, UITableViewDataSource, UITab
     @IBOutlet weak var tableView: UITableView!
     let cellIdentifier = "MenuCell"
     let menuItems: [String] = ["Your Photos", "Settings", "Sign Out"]
-    var delegate: HomeLeftMenuViewControllerDelegate?
+    weak var delegate: HomeLeftMenuViewControllerDelegate?
     
     // MARK: - View lifecycle
     override func viewDidLoad() {
