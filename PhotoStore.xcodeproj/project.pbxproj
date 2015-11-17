@@ -16,14 +16,14 @@
 		324A65C21BE9F0D90002E30C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 324A65C01BE9F0D90002E30C /* Main.storyboard */; };
 		324A65C41BE9F0D90002E30C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 324A65C31BE9F0D90002E30C /* Assets.xcassets */; };
 		324A65C71BE9F0D90002E30C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 324A65C51BE9F0D90002E30C /* LaunchScreen.storyboard */; };
+		324E87531BFABBBF00163A3C /* ConnectFacebookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324E87511BFABBBF00163A3C /* ConnectFacebookViewController.swift */; };
+		324E87541BFABBBF00163A3C /* ConnectFacebookViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 324E87521BFABBBF00163A3C /* ConnectFacebookViewController.xib */; };
 		32524FB71BEB05090023FF33 /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = 32524FB61BEB05090023FF33 /* FontAwesome.otf */; };
 		3260EC561BF034FB00A23D7F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3260EC551BF034FB00A23D7F /* HomeViewController.swift */; };
 		3260EC5A1BF03B5B00A23D7F /* ReplaceRootSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3260EC591BF03B5B00A23D7F /* ReplaceRootSegue.swift */; };
 		3293C2191BF88AE30063A25E /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3293C2171BF88AE30063A25E /* SettingsViewController.swift */; };
 		3293C21A1BF88AE30063A25E /* SettingsViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3293C2181BF88AE30063A25E /* SettingsViewController.xib */; };
 		3293C21C1BF88B9C0063A25E /* HomeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3293C21B1BF88B9C0063A25E /* HomeNavigationController.swift */; };
-		3293C21F1BF898200063A25E /* ConnectAccountViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3293C21D1BF898200063A25E /* ConnectAccountViewController.swift */; };
-		3293C2201BF898200063A25E /* ConnectAccountViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 3293C21E1BF898200063A25E /* ConnectAccountViewController.xib */; };
 		3294E12E1BF1F370004E0099 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3294E12D1BF1F370004E0099 /* NavigationController.swift */; };
 		3294E1301BF1F445004E0099 /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3294E12F1BF1F445004E0099 /* Home.storyboard */; };
 		3294E1351BF1FC9E004E0099 /* test_image.png in Resources */ = {isa = PBXBuildFile; fileRef = 3294E1341BF1FC9E004E0099 /* test_image.png */; };
@@ -49,14 +49,14 @@
 		324A65C31BE9F0D90002E30C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		324A65C61BE9F0D90002E30C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		324A65C81BE9F0D90002E30C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		324E87511BFABBBF00163A3C /* ConnectFacebookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectFacebookViewController.swift; sourceTree = "<group>"; };
+		324E87521BFABBBF00163A3C /* ConnectFacebookViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConnectFacebookViewController.xib; sourceTree = "<group>"; };
 		32524FB61BEB05090023FF33 /* FontAwesome.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome.otf; path = ../Pods/FontAwesomeKit/FontAwesomeKit/FontAwesome.otf; sourceTree = "<group>"; };
 		3260EC551BF034FB00A23D7F /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		3260EC591BF03B5B00A23D7F /* ReplaceRootSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReplaceRootSegue.swift; sourceTree = "<group>"; };
 		3293C2171BF88AE30063A25E /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		3293C2181BF88AE30063A25E /* SettingsViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SettingsViewController.xib; sourceTree = "<group>"; };
 		3293C21B1BF88B9C0063A25E /* HomeNavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeNavigationController.swift; sourceTree = "<group>"; };
-		3293C21D1BF898200063A25E /* ConnectAccountViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectAccountViewController.swift; sourceTree = "<group>"; };
-		3293C21E1BF898200063A25E /* ConnectAccountViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConnectAccountViewController.xib; sourceTree = "<group>"; };
 		3294E12D1BF1F370004E0099 /* NavigationController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 		3294E12F1BF1F445004E0099 /* Home.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		3294E1341BF1FC9E004E0099 /* test_image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = test_image.png; sourceTree = "<group>"; };
@@ -124,9 +124,9 @@
 				3294E12D1BF1F370004E0099 /* NavigationController.swift */,
 				324A349A1BEC80C70001F69F /* AccountChoiceViewController.swift */,
 				329729D01BEF11360089BD09 /* EmailSignUpViewController.swift */,
-				3293C21D1BF898200063A25E /* ConnectAccountViewController.swift */,
-				3293C21E1BF898200063A25E /* ConnectAccountViewController.xib */,
 				324A349C1BEC81770001F69F /* EmailSignInViewController.swift */,
+				324E87511BFABBBF00163A3C /* ConnectFacebookViewController.swift */,
+				324E87521BFABBBF00163A3C /* ConnectFacebookViewController.xib */,
 				324A34A01BECA40D0001F69F /* ForgotPasswordViewController.swift */,
 			);
 			name = SignIn;
@@ -249,10 +249,10 @@
 				32524FB71BEB05090023FF33 /* FontAwesome.otf in Resources */,
 				3294E1351BF1FC9E004E0099 /* test_image.png in Resources */,
 				324A65C71BE9F0D90002E30C /* LaunchScreen.storyboard in Resources */,
+				324E87541BFABBBF00163A3C /* ConnectFacebookViewController.xib in Resources */,
 				32FB38FE1BF0962400D717D3 /* HomeLeftMenuViewController.xib in Resources */,
 				324A65C41BE9F0D90002E30C /* Assets.xcassets in Resources */,
 				324A65C21BE9F0D90002E30C /* Main.storyboard in Resources */,
-				3293C2201BF898200063A25E /* ConnectAccountViewController.xib in Resources */,
 				3294E13A1BF24D78004E0099 /* HomeFilterViewController.xib in Resources */,
 				3293C21A1BF88AE30063A25E /* SettingsViewController.xib in Resources */,
 			);
@@ -319,8 +319,8 @@
 				329729D11BEF11360089BD09 /* EmailSignUpViewController.swift in Sources */,
 				3260EC5A1BF03B5B00A23D7F /* ReplaceRootSegue.swift in Sources */,
 				32FB38F91BF095DB00D717D3 /* HomeContentViewController.swift in Sources */,
-				3293C21F1BF898200063A25E /* ConnectAccountViewController.swift in Sources */,
 				324A34A11BECA40D0001F69F /* ForgotPasswordViewController.swift in Sources */,
+				324E87531BFABBBF00163A3C /* ConnectFacebookViewController.swift in Sources */,
 				324A349D1BEC81770001F69F /* EmailSignInViewController.swift in Sources */,
 				324A349B1BEC80C70001F69F /* AccountChoiceViewController.swift in Sources */,
 				3293C2191BF88AE30063A25E /* SettingsViewController.swift in Sources */,

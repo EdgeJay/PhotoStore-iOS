@@ -147,11 +147,11 @@ class EmailSignUpViewController: UIViewController, UITextFieldDelegate {
     }
     
     func gotoConnectAccount() {
-        let connectAccountViewController = ConnectAccountViewController(
-            nibName: "ConnectAccountViewController",
+        let connectFacebookViewController = ConnectFacebookViewController(
+            nibName: "ConnectFacebookViewController",
             bundle: NSBundle.mainBundle()
         )
-        self.navigationController?.setViewControllers([connectAccountViewController], animated: true)
+        self.navigationController?.setViewControllers([connectFacebookViewController], animated: true)
     }
     
     // MARK: - Form validation
