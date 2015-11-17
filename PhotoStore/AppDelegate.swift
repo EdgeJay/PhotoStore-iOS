@@ -24,7 +24,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UIManager.setupAppTheme()
         
         // Register with Parse.com
-        Parse.setApplicationId("iI93PDWQH3BTUbaYYprMTHxmqaEsi9V4sb1ej77t", clientKey: "k565PRFVCnzfNkO2koVv2dZ1VO1NQnkDFpbUuEPp")
+        if let path = NSBundle.mainBundle().pathForResource("Parse", ofType: "plist") {
+            if let parseKeys = NSDictionary(contentsOfFile: path) {
+                Parse.setApplicationId(
+                    (parseKeys["applicationId"] as! String),
+                    clientKey: (parseKeys["clientKey"] as! String)
+                )
+            }
+        }
         
         // Track app open event
         PFAnalytics.trackAppOpenedWithLaunchOptions(launchOptions)

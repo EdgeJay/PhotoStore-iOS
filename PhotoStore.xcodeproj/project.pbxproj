@@ -18,6 +18,7 @@
 		324A65C71BE9F0D90002E30C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 324A65C51BE9F0D90002E30C /* LaunchScreen.storyboard */; };
 		324E87531BFABBBF00163A3C /* ConnectFacebookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 324E87511BFABBBF00163A3C /* ConnectFacebookViewController.swift */; };
 		324E87541BFABBBF00163A3C /* ConnectFacebookViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 324E87521BFABBBF00163A3C /* ConnectFacebookViewController.xib */; };
+		324E87591BFB305800163A3C /* Parse.plist in Resources */ = {isa = PBXBuildFile; fileRef = 324E87581BFB305800163A3C /* Parse.plist */; };
 		32524FB71BEB05090023FF33 /* FontAwesome.otf in Resources */ = {isa = PBXBuildFile; fileRef = 32524FB61BEB05090023FF33 /* FontAwesome.otf */; };
 		3260EC561BF034FB00A23D7F /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3260EC551BF034FB00A23D7F /* HomeViewController.swift */; };
 		3260EC5A1BF03B5B00A23D7F /* ReplaceRootSegue.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3260EC591BF03B5B00A23D7F /* ReplaceRootSegue.swift */; };
@@ -51,6 +52,7 @@
 		324A65C81BE9F0D90002E30C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		324E87511BFABBBF00163A3C /* ConnectFacebookViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectFacebookViewController.swift; sourceTree = "<group>"; };
 		324E87521BFABBBF00163A3C /* ConnectFacebookViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ConnectFacebookViewController.xib; sourceTree = "<group>"; };
+		324E87581BFB305800163A3C /* Parse.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = Parse.plist; path = Keys/Parse.plist; sourceTree = "<group>"; };
 		32524FB61BEB05090023FF33 /* FontAwesome.otf */ = {isa = PBXFileReference; lastKnownFileType = file; name = FontAwesome.otf; path = ../Pods/FontAwesomeKit/FontAwesomeKit/FontAwesome.otf; sourceTree = "<group>"; };
 		3260EC551BF034FB00A23D7F /* HomeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		3260EC591BF03B5B00A23D7F /* ReplaceRootSegue.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReplaceRootSegue.swift; sourceTree = "<group>"; };
@@ -104,6 +106,7 @@
 			isa = PBXGroup;
 			children = (
 				324A65BC1BE9F0D90002E30C /* AppDelegate.swift */,
+				324E87571BFB302800163A3C /* Keys */,
 				3294E1321BF1F46D004E0099 /* Common */,
 				3294E1311BF1F45A004E0099 /* SignIn */,
 				3294E1331BF1F494004E0099 /* Home */,
@@ -116,6 +119,14 @@
 				32524FB61BEB05090023FF33 /* FontAwesome.otf */,
 			);
 			path = PhotoStore;
+			sourceTree = "<group>";
+		};
+		324E87571BFB302800163A3C /* Keys */ = {
+			isa = PBXGroup;
+			children = (
+				324E87581BFB305800163A3C /* Parse.plist */,
+			);
+			name = Keys;
 			sourceTree = "<group>";
 		};
 		3294E1311BF1F45A004E0099 /* SignIn */ = {
@@ -248,6 +259,7 @@
 				32FB38FA1BF095DB00D717D3 /* HomeContentViewController.xib in Resources */,
 				32524FB71BEB05090023FF33 /* FontAwesome.otf in Resources */,
 				3294E1351BF1FC9E004E0099 /* test_image.png in Resources */,
+				324E87591BFB305800163A3C /* Parse.plist in Resources */,
 				324A65C71BE9F0D90002E30C /* LaunchScreen.storyboard in Resources */,
 				324E87541BFABBBF00163A3C /* ConnectFacebookViewController.xib in Resources */,
 				32FB38FE1BF0962400D717D3 /* HomeLeftMenuViewController.xib in Resources */,
